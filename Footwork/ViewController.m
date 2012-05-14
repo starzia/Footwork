@@ -13,6 +13,9 @@
 
 @implementation ViewController
 @synthesize announcer;
+@synthesize slider;
+@synthesize sliderLabel;
+@synthesize pauseButton, toolbar;
 
 - (void)viewDidLoad
 {
@@ -33,7 +36,35 @@
 }
 
 -(IBAction)togglePause:(id)sender{
-    [announcer start];
+    if( announcer.isRunning ){
+        [announcer stop];
+        slider.enabled = YES;
+    }else{
+        announcer.secondsBetweenAnnouncements = [self sliderValue];
+        [announcer start];
+        slider.enabled = NO;
+    }
+    // update toolbar
+    UIBarButtonSystemItem style = !announcer.isRunning? UIBarButtonSystemItemPlay : UIBarButtonSystemItemPause;
+    UIBarButtonItem* newPauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:style
+                                                                                    target:self
+                                                                                    action:@selector(togglePause:)];
+    newPauseButton.style = UIBarButtonItemStyleBordered;
+    pauseButton = newPauseButton;
+    NSMutableArray* toolbarItems = [NSMutableArray arrayWithArray:toolbar.items];
+    [toolbarItems replaceObjectAtIndex:0 withObject:newPauseButton];
+    [toolbar setItems:toolbarItems];
+    [toolbar setNeedsLayout];
+
+}
+
+// round slider to 0.1 second precisionß
+-(float)sliderValue{
+    return round(slider.value*10)/10.0;
+}
+
+-(IBAction)sliderChanged:(id)sender{
+    sliderLabel.text = [NSString stringWithFormat:@"%.1f",[self sliderValue]];
 }
 
 @end
