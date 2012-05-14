@@ -15,6 +15,27 @@
 		AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA61560964B00B76784 /* AppDelegate.m */; };
 		AA47BEAA1560964B00B76784 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA91560964B00B76784 /* ViewController.m */; };
 		AA47BEAD1560964B00B76784 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEAB1560964B00B76784 /* ViewController.xib */; };
+		AA47BEB91560980B00B76784 /* Announcer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEB81560980B00B76784 /* Announcer.m */; };
+		AA47BECF1560A12F00B76784 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBB1560A12F00B76784 /* 0.wav */; };
+		AA47BED01560A12F00B76784 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBC1560A12F00B76784 /* 1.wav */; };
+		AA47BED11560A12F00B76784 /* 10.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBD1560A12F00B76784 /* 10.wav */; };
+		AA47BED21560A12F00B76784 /* 11.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBE1560A12F00B76784 /* 11.wav */; };
+		AA47BED31560A12F00B76784 /* 12.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBF1560A12F00B76784 /* 12.wav */; };
+		AA47BED41560A12F00B76784 /* 13.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC01560A12F00B76784 /* 13.wav */; };
+		AA47BED51560A12F00B76784 /* 14.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC11560A12F00B76784 /* 14.wav */; };
+		AA47BED61560A12F00B76784 /* 15.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC21560A12F00B76784 /* 15.wav */; };
+		AA47BED71560A12F00B76784 /* 16.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC31560A12F00B76784 /* 16.wav */; };
+		AA47BED81560A12F00B76784 /* 17.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC41560A12F00B76784 /* 17.wav */; };
+		AA47BED91560A12F00B76784 /* 18.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC51560A12F00B76784 /* 18.wav */; };
+		AA47BEDA1560A12F00B76784 /* 19.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC61560A12F00B76784 /* 19.wav */; };
+		AA47BEDB1560A12F00B76784 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC71560A12F00B76784 /* 2.wav */; };
+		AA47BEDC1560A12F00B76784 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC81560A12F00B76784 /* 3.wav */; };
+		AA47BEDD1560A12F00B76784 /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEC91560A12F00B76784 /* 4.wav */; };
+		AA47BEDE1560A12F00B76784 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECA1560A12F00B76784 /* 5.wav */; };
+		AA47BEDF1560A12F00B76784 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECB1560A12F00B76784 /* 6.wav */; };
+		AA47BEE01560A12F00B76784 /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECC1560A12F00B76784 /* 7.wav */; };
+		AA47BEE11560A12F00B76784 /* 8.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECD1560A12F00B76784 /* 8.wav */; };
+		AA47BEE21560A12F00B76784 /* 9.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECE1560A12F00B76784 /* 9.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +43,37 @@
 		AA47BE961560964B00B76784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA47BE981560964B00B76784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA47BE9A1560964B00B76784 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AA47BE9E1560964B00B76784 /* Footwork-Info.plist */ = {isa = PBXFileReference; path = "Footwork-Info.plist"; sourceTree = "<group>"; };
+		AA47BE9E1560964B00B76784 /* Footwork-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Footwork-Info.plist"; sourceTree = "<group>"; };
 		AA47BEA01560964B00B76784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA47BEA21560964B00B76784 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */ = {isa = PBXFileReference; path = "Footwork-Prefix.pch"; sourceTree = "<group>"; };
-		AA47BEA51560964B00B76784 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Footwork-Prefix.pch"; sourceTree = "<group>"; };
+		AA47BEA51560964B00B76784 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA47BEA61560964B00B76784 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AA47BEA81560964B00B76784 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		AA47BEA81560964B00B76784 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AA47BEA91560964B00B76784 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AA47BEAC1560964B00B76784 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		AA47BEB71560980B00B76784 /* Announcer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcer.h; sourceTree = "<group>"; };
+		AA47BEB81560980B00B76784 /* Announcer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Announcer.m; sourceTree = "<group>"; };
+		AA47BEBB1560A12F00B76784 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		AA47BEBC1560A12F00B76784 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		AA47BEBD1560A12F00B76784 /* 10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 10.wav; sourceTree = "<group>"; };
+		AA47BEBE1560A12F00B76784 /* 11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 11.wav; sourceTree = "<group>"; };
+		AA47BEBF1560A12F00B76784 /* 12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 12.wav; sourceTree = "<group>"; };
+		AA47BEC01560A12F00B76784 /* 13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 13.wav; sourceTree = "<group>"; };
+		AA47BEC11560A12F00B76784 /* 14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 14.wav; sourceTree = "<group>"; };
+		AA47BEC21560A12F00B76784 /* 15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 15.wav; sourceTree = "<group>"; };
+		AA47BEC31560A12F00B76784 /* 16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 16.wav; sourceTree = "<group>"; };
+		AA47BEC41560A12F00B76784 /* 17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 17.wav; sourceTree = "<group>"; };
+		AA47BEC51560A12F00B76784 /* 18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 18.wav; sourceTree = "<group>"; };
+		AA47BEC61560A12F00B76784 /* 19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 19.wav; sourceTree = "<group>"; };
+		AA47BEC71560A12F00B76784 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		AA47BEC81560A12F00B76784 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		AA47BEC91560A12F00B76784 /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
+		AA47BECA1560A12F00B76784 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
+		AA47BECB1560A12F00B76784 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
+		AA47BECC1560A12F00B76784 /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
+		AA47BECD1560A12F00B76784 /* 8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 8.wav; sourceTree = "<group>"; };
+		AA47BECE1560A12F00B76784 /* 9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 9.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +120,15 @@
 		AA47BE9C1560964B00B76784 /* Footwork */ = {
 			isa = PBXGroup;
 			children = (
+				AA47BEBA1560A12F00B76784 /* digits */,
 				AA47BEA51560964B00B76784 /* AppDelegate.h */,
 				AA47BEA61560964B00B76784 /* AppDelegate.m */,
 				AA47BEA81560964B00B76784 /* ViewController.h */,
 				AA47BEA91560964B00B76784 /* ViewController.m */,
 				AA47BEAB1560964B00B76784 /* ViewController.xib */,
 				AA47BE9D1560964B00B76784 /* Supporting Files */,
+				AA47BEB71560980B00B76784 /* Announcer.h */,
+				AA47BEB81560980B00B76784 /* Announcer.m */,
 			);
 			path = Footwork;
 			sourceTree = "<group>";
@@ -96,6 +142,33 @@
 				AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA47BEBA1560A12F00B76784 /* digits */ = {
+			isa = PBXGroup;
+			children = (
+				AA47BEBB1560A12F00B76784 /* 0.wav */,
+				AA47BEBC1560A12F00B76784 /* 1.wav */,
+				AA47BEBD1560A12F00B76784 /* 10.wav */,
+				AA47BEBE1560A12F00B76784 /* 11.wav */,
+				AA47BEBF1560A12F00B76784 /* 12.wav */,
+				AA47BEC01560A12F00B76784 /* 13.wav */,
+				AA47BEC11560A12F00B76784 /* 14.wav */,
+				AA47BEC21560A12F00B76784 /* 15.wav */,
+				AA47BEC31560A12F00B76784 /* 16.wav */,
+				AA47BEC41560A12F00B76784 /* 17.wav */,
+				AA47BEC51560A12F00B76784 /* 18.wav */,
+				AA47BEC61560A12F00B76784 /* 19.wav */,
+				AA47BEC71560A12F00B76784 /* 2.wav */,
+				AA47BEC81560A12F00B76784 /* 3.wav */,
+				AA47BEC91560A12F00B76784 /* 4.wav */,
+				AA47BECA1560A12F00B76784 /* 5.wav */,
+				AA47BECB1560A12F00B76784 /* 6.wav */,
+				AA47BECC1560A12F00B76784 /* 7.wav */,
+				AA47BECD1560A12F00B76784 /* 8.wav */,
+				AA47BECE1560A12F00B76784 /* 9.wav */,
+			);
+			path = digits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +224,26 @@
 			files = (
 				AA47BEA11560964B00B76784 /* InfoPlist.strings in Resources */,
 				AA47BEAD1560964B00B76784 /* ViewController.xib in Resources */,
+				AA47BECF1560A12F00B76784 /* 0.wav in Resources */,
+				AA47BED01560A12F00B76784 /* 1.wav in Resources */,
+				AA47BED11560A12F00B76784 /* 10.wav in Resources */,
+				AA47BED21560A12F00B76784 /* 11.wav in Resources */,
+				AA47BED31560A12F00B76784 /* 12.wav in Resources */,
+				AA47BED41560A12F00B76784 /* 13.wav in Resources */,
+				AA47BED51560A12F00B76784 /* 14.wav in Resources */,
+				AA47BED61560A12F00B76784 /* 15.wav in Resources */,
+				AA47BED71560A12F00B76784 /* 16.wav in Resources */,
+				AA47BED81560A12F00B76784 /* 17.wav in Resources */,
+				AA47BED91560A12F00B76784 /* 18.wav in Resources */,
+				AA47BEDA1560A12F00B76784 /* 19.wav in Resources */,
+				AA47BEDB1560A12F00B76784 /* 2.wav in Resources */,
+				AA47BEDC1560A12F00B76784 /* 3.wav in Resources */,
+				AA47BEDD1560A12F00B76784 /* 4.wav in Resources */,
+				AA47BEDE1560A12F00B76784 /* 5.wav in Resources */,
+				AA47BEDF1560A12F00B76784 /* 6.wav in Resources */,
+				AA47BEE01560A12F00B76784 /* 7.wav in Resources */,
+				AA47BEE11560A12F00B76784 /* 8.wav in Resources */,
+				AA47BEE21560A12F00B76784 /* 9.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +257,7 @@
 				AA47BEA31560964B00B76784 /* main.m in Sources */,
 				AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */,
 				AA47BEAA1560964B00B76784 /* ViewController.m in Sources */,
+				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +334,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -251,6 +346,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
