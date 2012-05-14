@@ -36,6 +36,8 @@
 		AA47BEE01560A12F00B76784 /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECC1560A12F00B76784 /* 7.wav */; };
 		AA47BEE11560A12F00B76784 /* 8.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECD1560A12F00B76784 /* 8.wav */; };
 		AA47BEE21560A12F00B76784 /* 9.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECE1560A12F00B76784 /* 9.wav */; };
+		AA47BEE91560AD3300B76784 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BEE81560AD3300B76784 /* AudioToolbox.framework */; };
+		AA47BEEB1560AF1F00B76784 /* GB.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEEA1560AF1F00B76784 /* GB.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		AA47BECC1560A12F00B76784 /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
 		AA47BECD1560A12F00B76784 /* 8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 8.wav; sourceTree = "<group>"; };
 		AA47BECE1560A12F00B76784 /* 9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 9.wav; sourceTree = "<group>"; };
+		AA47BEE81560AD3300B76784 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AA47BEEA1560AF1F00B76784 /* GB.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GB.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA47BEE91560AD3300B76784 /* AudioToolbox.framework in Frameworks */,
 				AA47BE971560964B00B76784 /* UIKit.framework in Frameworks */,
 				AA47BE991560964B00B76784 /* Foundation.framework in Frameworks */,
 				AA47BE9B1560964B00B76784 /* CoreGraphics.framework in Frameworks */,
@@ -93,6 +98,7 @@
 		AA47BE871560964B00B76784 = {
 			isa = PBXGroup;
 			children = (
+				AA47BEE81560AD3300B76784 /* AudioToolbox.framework */,
 				AA47BE9C1560964B00B76784 /* Footwork */,
 				AA47BE951560964B00B76784 /* Frameworks */,
 				AA47BE931560964B00B76784 /* Products */,
@@ -147,6 +153,7 @@
 		AA47BEBA1560A12F00B76784 /* digits */ = {
 			isa = PBXGroup;
 			children = (
+				AA47BEEA1560AF1F00B76784 /* GB.wav */,
 				AA47BEBB1560A12F00B76784 /* 0.wav */,
 				AA47BEBC1560A12F00B76784 /* 1.wav */,
 				AA47BEBD1560A12F00B76784 /* 10.wav */,
@@ -244,6 +251,7 @@
 				AA47BEE01560A12F00B76784 /* 7.wav in Resources */,
 				AA47BEE11560A12F00B76784 /* 8.wav in Resources */,
 				AA47BEE21560A12F00B76784 /* 9.wav in Resources */,
+				AA47BEEB1560AF1F00B76784 /* GB.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 #import "Announcer.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation Announcer{
     NSTimer* _mainTimer;
@@ -34,16 +35,30 @@
     [self stop];
 }
 
+-(void)playSoundFile:(NSString*)filename{
+    SystemSoundID soundID;
+    NSString *path = [[NSBundle mainBundle]
+                      pathForResource:filename ofType:@"wav"];    
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path],&soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
 /** return random number between 1 and numberRange (inclusive) */
 -(NSInteger)getRandom{
     return 1 + ( arc4random() % numberRange );
 }
 
 -(void)announce{
-    NSLog( @"goto %d", [self getRandom] );
+    int randomNum = [self getRandom];
+    NSLog( @"goto %d", randomNum );
+    NSString* filename = [NSString stringWithFormat:@"%d",randomNum];
+    [self playSoundFile:filename];
 }
 -(void)warn{
     NSLog( @"ready..." );
+    // play tone
+    [self playSoundFile:@"GB"];
 }
 
 -(void)start{
