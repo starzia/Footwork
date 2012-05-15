@@ -12,7 +12,8 @@
 /** random numbers between 1 and numberRange will be announced */
 @property int numberRange;
 @property float secondsBetweenAnnouncements;
-/** seconds before the announcement at which time to make a warning beep */
+/** seconds before the announcement at which time to make a warning beep.
+ setting to zero disabled the warning beep. */
 @property float warningBeepTime;
 @property (readonly) BOOL isRunning;
 

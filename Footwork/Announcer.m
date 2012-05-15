@@ -69,13 +69,15 @@
                                                 selector:@selector(announce)
                                                 userInfo:nil
                                                  repeats:YES];
-    _warningTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:secondsBetweenAnnouncements-warningBeepTime]
-                                          interval:secondsBetweenAnnouncements
-                                            target:self 
-                                          selector:@selector(warn)
-                                          userInfo:nil 
-                                           repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_warningTimer forMode:NSDefaultRunLoopMode];
+    if( warningBeepTime > 0 ){
+        _warningTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:secondsBetweenAnnouncements-warningBeepTime]
+                                              interval:secondsBetweenAnnouncements
+                                                target:self 
+                                              selector:@selector(warn)
+                                              userInfo:nil 
+                                               repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_warningTimer forMode:NSDefaultRunLoopMode];
+    }
     _isRunning = YES;
 }
 

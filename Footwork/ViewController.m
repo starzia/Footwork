@@ -13,8 +13,9 @@
 
 @implementation ViewController
 @synthesize announcer;
-@synthesize slider;
-@synthesize sliderLabel;
+@synthesize rateSlider, rateSliderLabel;
+@synthesize warningSlider, warningSliderLabel;
+@synthesize numberSlider, numberSliderLabel;
 @synthesize pauseButton, toolbar;
 
 - (void)viewDidLoad
@@ -38,13 +39,15 @@
 -(IBAction)togglePause:(id)sender{
     if( announcer.isRunning ){
         [announcer stop];
-        slider.enabled = YES;
     }else{
-        announcer.secondsBetweenAnnouncements = [self sliderValue];
+        announcer.secondsBetweenAnnouncements = [self rateSliderValue];
+        announcer.warningBeepTime = [self warningSliderValue];
+        announcer.numberRange = [self numberSliderValue];
         [announcer start];
-        slider.enabled = NO;
     }
-    // update toolbar
+    rateSlider.enabled = warningSlider.enabled = numberSlider.enabled = !announcer.isRunning;
+    
+    // update toolbar pause/start button
     UIBarButtonSystemItem style = !announcer.isRunning? UIBarButtonSystemItemPlay : UIBarButtonSystemItemPause;
     UIBarButtonItem* newPauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:style
                                                                                     target:self
@@ -58,13 +61,32 @@
 
 }
 
-// round slider to 0.1 second precisionß
--(float)sliderValue{
-    return round(slider.value*10)/10.0;
+// round rate slider to 0.1 second precision
+-(float)rateSliderValue{
+    return round(rateSlider.value*10)/10.0;
+}
+// round warning slider to 0.1 second precision
+-(float)warningSliderValue{
+    return round(warningSlider.value*10)/10.0;
+}
+// round number slider to integer value
+-(int)numberSliderValue{
+    return round(numberSlider.value);
 }
 
--(IBAction)sliderChanged:(id)sender{
-    sliderLabel.text = [NSString stringWithFormat:@"%.1f",[self sliderValue]];
+-(IBAction)rateSliderChanged:(id)sender{
+    rateSliderLabel.text = [NSString stringWithFormat:@"%.1f",[self rateSliderValue]];
+}
+-(IBAction)warningSliderChanged:(id)sender{
+    float val = [self warningSliderValue];
+    if( val == 0.0 ){
+        warningSliderLabel.text = @"none";
+    }else{
+        warningSliderLabel.text = [NSString stringWithFormat:@"%.1f",val];
+    }
+}
+-(IBAction)numberSliderChanged:(id)sender{
+    numberSliderLabel.text = [NSString stringWithFormat:@"%d",[self numberSliderValue]];
 }
 
 @end
