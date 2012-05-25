@@ -21,6 +21,13 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    // Turn off the idle timer, since this app doesn't rely on constant touch input
+	application.idleTimerDisabled = YES;
+    
+    // disable shake-to-undo because user will be moving around a lot with this app
+	application.applicationSupportsShakeToEdit = NO; 
+    
     return YES;
 }
 
