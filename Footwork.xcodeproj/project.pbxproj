@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA16F77D15714B6500C3E6F2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA16F77C15714B6500C3E6F2 /* MessageUI.framework */; };
 		AA47BE971560964B00B76784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BE961560964B00B76784 /* UIKit.framework */; };
 		AA47BE991560964B00B76784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BE981560964B00B76784 /* Foundation.framework */; };
 		AA47BE9B1560964B00B76784 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BE9A1560964B00B76784 /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA16F77C15714B6500C3E6F2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AA47BE921560964B00B76784 /* Footwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Footwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA47BE961560964B00B76784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA47BE981560964B00B76784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA16F77D15714B6500C3E6F2 /* MessageUI.framework in Frameworks */,
 				AA47BEE91560AD3300B76784 /* AudioToolbox.framework in Frameworks */,
 				AA47BE971560964B00B76784 /* UIKit.framework in Frameworks */,
 				AA47BE991560964B00B76784 /* Foundation.framework in Frameworks */,
@@ -100,6 +103,7 @@
 		AA47BE871560964B00B76784 = {
 			isa = PBXGroup;
 			children = (
+				AA16F77C15714B6500C3E6F2 /* MessageUI.framework */,
 				AA9F5230156C797100E6F114 /* icon.png */,
 				AA47BEE81560AD3300B76784 /* AudioToolbox.framework */,
 				AA47BE9C1560964B00B76784 /* Footwork */,
@@ -346,8 +350,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -358,8 +363,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

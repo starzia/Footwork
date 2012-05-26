@@ -17,6 +17,7 @@
 @synthesize secondsBetweenAnnouncements;
 @synthesize warningBeepTime;
 @synthesize numberRange;
+@synthesize delegate;
 
 
 -(id)init{
@@ -54,6 +55,8 @@
     NSLog( @"goto %d", randomNum );
     NSString* filename = [NSString stringWithFormat:@"%d",randomNum];
     [self playSoundFile:filename];
+    
+    if( delegate ) [delegate gotNumber:randomNum];
 }
 -(void)warn{
     NSLog( @"ready..." );

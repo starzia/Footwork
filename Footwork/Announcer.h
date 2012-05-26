@@ -7,6 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AnnouncerDelegate <NSObject>
+-(void)gotNumber:(int)number;
+@end
+
 @interface Announcer : NSObject
 
 /** random numbers between 1 and numberRange will be announced */
@@ -16,6 +20,8 @@
  setting to zero disabled the warning beep. */
 @property float warningBeepTime;
 @property (readonly) BOOL isRunning;
+
+@property (strong,nonatomic) id<AnnouncerDelegate> delegate; 
 
 -(void)start;
 -(void)stop;

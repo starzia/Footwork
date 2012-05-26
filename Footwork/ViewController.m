@@ -7,7 +7,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    UIView* _flash;
+}
 
 @end
 
@@ -17,12 +19,21 @@
 @synthesize warningSlider, warningSliderLabel;
 @synthesize numberSlider, numberSliderLabel;
 @synthesize pauseButton, toolbar;
+@synthesize optionsButton;
+@synthesize randomNumberLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     announcer = [[Announcer alloc] init];
+    announcer.delegate = self;
+    
+    // set up flash view
+    _flash = [[UIView alloc] initWithFrame:self.view.frame];
+    _flash.alpha = 0;
+    _flash.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:_flash];
 }
 
 - (void)viewDidUnload
@@ -34,6 +45,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+-(IBAction)clickedOptions:(id)sender{
+    UIActionSheet* optionsSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                              delegate:self 
+                                                     cancelButtonTitle:@"Cancel" 
+                                                destructiveButtonTitle:nil 
+                                                     otherButtonTitles:@"Visit the website",
+                                                                       @"Email us feedback",nil];
+    [optionsSheet showFromBarButtonItem:self.optionsButton animated:YES];
 }
 
 -(IBAction)togglePause:(id)sender{
@@ -87,6 +108,71 @@
 }
 -(IBAction)numberSliderChanged:(id)sender{
     numberSliderLabel.text = [NSString stringWithFormat:@"%d",[self numberSliderValue]];
+}
+
+-(void)email{
+    if( [MFMailComposeViewController canSendMail] ){
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        mailer.mailComposeDelegate = self;
+        
+        // email feedback
+        [mailer setToRecipients:[NSArray arrayWithObject:@"steve@stevetarzia.com"]];
+        [mailer setSubject:[NSString stringWithFormat:@"[Footwork v%@] Feedback", 
+                            [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+                            ]];
+        [mailer setMessageBody:@"" isHTML:NO];
+        [self presentModalViewController:mailer animated:YES];
+    }else{
+        UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Email unavailable" 
+                                                          message:@"Please configure your email settings before trying to use this option." 
+                                                         delegate:self 
+                                                cancelButtonTitle:@"OK" 
+                                                otherButtonTitles:nil];
+        [myAlert show];	
+    }
+    
+}
+
+-(void)flash{
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         _flash.alpha = 1.0;
+                     } completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.1
+                                          animations:^(void){
+                                              _flash.alpha = 0;
+                                          }];
+                     }];
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if( buttonIndex == 0 ){ // zero is the bottom red buttom for cancel confirmation
+        // website
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
+    }else if( buttonIndex == 1 ) {
+        // feedback
+        [self email];
+    }else if( buttonIndex == 2 ){
+        // dismiss view
+    }
+}
+
+#pragma mark - MKMailComposeViewControllerDelegate
+
+// finished trying to send email
+- (void)mailComposeController:(MFMailComposeViewController*)controller 
+		  didFinishWithResult:(MFMailComposeResult)result 
+						error:(NSError*)error{
+	// make email window disappear
+	[controller dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - AnnouncerDelegate
+
+-(void)gotNumber:(int)number{
+    [self flash];
+    randomNumberLabel.text = [NSString stringWithFormat:@"%d",number];
 }
 
 @end
