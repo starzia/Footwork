@@ -54,37 +54,6 @@
 						<float key="IBUIMinValue">1</float>
 						<float key="IBUIMaxValue">10</float>
 					</object>
-					<object class="IBUIToolbar" id="1071092610">
-						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
-						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="211147048">
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="1071092610"/>
-								<int key="IBUISystemItemIdentifier">17</int>
-							</object>
-							<object class="IBUIBarButtonItem" id="681597152">
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIToolbar" ref="1071092610"/>
-								<int key="IBUISystemItemIdentifier">5</int>
-							</object>
-							<object class="IBUIBarButtonItem" id="805210565">
-								<string key="IBUITitle">Options</string>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="1071092610"/>
-							</object>
-						</array>
-					</object>
 					<object class="IBUILabel" id="302275628">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
@@ -224,7 +193,7 @@
 						<string key="NSFrame">{{63, 175}, {239, 23}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="172009141"/>
+						<reference key="NSNextKeyView" ref="967728302"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -255,9 +224,9 @@
 						<reference key="IBUIFontDescription" ref="599566580"/>
 						<reference key="IBUIFont" ref="923047742"/>
 					</object>
-					<object class="IBUILabel" id="172009141">
+					<object class="IBUILabel" id="967728302">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{17, 205}, {278, 197}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -283,6 +252,37 @@
 							<double key="NSSize">124</double>
 							<int key="NSfFlags">16</int>
 						</object>
+					</object>
+					<object class="IBUIToolbar" id="1071092610">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">266</int>
+						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<array class="NSMutableArray" key="IBUIItems">
+							<object class="IBUIBarButtonItem" id="211147048">
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="1071092610"/>
+								<int key="IBUISystemItemIdentifier">17</int>
+							</object>
+							<object class="IBUIBarButtonItem" id="681597152">
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<reference key="IBUIToolbar" ref="1071092610"/>
+								<int key="IBUISystemItemIdentifier">5</int>
+							</object>
+							<object class="IBUIBarButtonItem" id="805210565">
+								<string key="IBUITitle">Options</string>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="1071092610"/>
+							</object>
+						</array>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -439,7 +439,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">randomNumberLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="172009141"/>
+						<reference key="destination" ref="967728302"/>
 					</object>
 					<int key="connectionID">48</int>
 				</object>
@@ -511,7 +511,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<reference key="object" ref="774585933"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="883320604"/>
-							<reference ref="1071092610"/>
 							<reference ref="302275628"/>
 							<reference ref="461695087"/>
 							<reference ref="236884023"/>
@@ -520,7 +519,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 							<reference ref="759047683"/>
 							<reference ref="817979336"/>
 							<reference ref="870089209"/>
-							<reference ref="172009141"/>
+							<reference ref="1071092610"/>
+							<reference ref="967728302"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -596,7 +596,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">47</int>
-						<reference key="object" ref="172009141"/>
+						<reference key="object" ref="967728302"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
