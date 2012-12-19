@@ -61,7 +61,6 @@
     if( announcer.isRunning ){
         [announcer stop];
     }else{
-        announcer.secondsBetweenAnnouncements = [self rateSliderValue];
         announcer.warningBeepTime = [self warningSliderValue];
         announcer.numberRange = [self numberSliderValue];
         [announcer start];
@@ -173,6 +172,10 @@
 -(void)gotNumber:(int)number{
     [self flash];
     randomNumberLabel.text = [NSString stringWithFormat:@"%d",number];
+}
+
+-(float)delayForNumber:(int)number{
+    return [self rateSliderValue];
 }
 
 @end

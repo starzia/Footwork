@@ -9,13 +9,14 @@
 
 @protocol AnnouncerDelegate <NSObject>
 -(void)gotNumber:(int)number;
+/** return the number of seconds to wait after announcing the given number */
+-(float)delayForNumber:(int)number;
 @end
 
 @interface Announcer : NSObject
 
 /** random numbers between 1 and numberRange will be announced */
 @property int numberRange;
-@property float secondsBetweenAnnouncements;
 /** seconds before the announcement at which time to make a warning beep.
  setting to zero disabled the warning beep. */
 @property float warningBeepTime;

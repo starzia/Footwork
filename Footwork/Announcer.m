@@ -14,7 +14,6 @@
     BOOL _isRunning;
 }
 
-@synthesize secondsBetweenAnnouncements;
 @synthesize warningBeepTime;
 @synthesize numberRange;
 @synthesize delegate;
@@ -24,7 +23,6 @@
     self = [super init];
     if( self ){
         // set property defaults
-        secondsBetweenAnnouncements = 4;
         warningBeepTime = 1;
         numberRange = 4;
         _isRunning = NO;
@@ -57,6 +55,25 @@
     [self playSoundFile:filename];
     
     if( delegate ) [delegate gotNumber:randomNum];
+    
+    // set up timers for next announcement
+    float delay = [self.delegate delayForNumber:randomNum];
+    _mainTimer = [NSTimer scheduledTimerWithTimeInterval:delay
+                                                  target:self
+                                                selector:@selector(announce)
+                                                userInfo:nil
+                                                 repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSDefaultRunLoopMode];
+    if( warningBeepTime > 0 ){
+        _warningTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:delay-warningBeepTime]
+                                              interval:delay
+                                                target:self 
+                                              selector:@selector(warn)
+                                              userInfo:nil 
+                                               repeats:NO];
+        [[NSRunLoop currentRunLoop] addTimer:_warningTimer forMode:NSDefaultRunLoopMode];
+    }
+    
 }
 -(void)warn{
     NSLog( @"ready..." );
@@ -66,21 +83,7 @@
 
 -(void)start{
     NSLog( @"started announcer" );
-    // set up timers
-    _mainTimer = [NSTimer scheduledTimerWithTimeInterval:secondsBetweenAnnouncements
-                                                  target:self
-                                                selector:@selector(announce)
-                                                userInfo:nil
-                                                 repeats:YES];
-    if( warningBeepTime > 0 ){
-        _warningTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:secondsBetweenAnnouncements-warningBeepTime]
-                                              interval:secondsBetweenAnnouncements
-                                                target:self 
-                                              selector:@selector(warn)
-                                              userInfo:nil 
-                                               repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:_warningTimer forMode:NSDefaultRunLoopMode];
-    }
+    [self announce];
     _isRunning = YES;
 }
 
