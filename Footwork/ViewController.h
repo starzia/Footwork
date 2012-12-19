@@ -28,6 +28,8 @@
 @property (strong) IBOutlet UIBarButtonItem* pauseButton;
 @property (strong) IBOutlet UIBarButtonItem* optionsButton;
 @property (strong) IBOutlet UIToolbar* toolbar;
+@property (strong) IBOutlet UISegmentedControl* modeControl;
+
 
 -(IBAction)togglePause:(id)sender;
 -(IBAction)rateSliderChanged:(id)sender;

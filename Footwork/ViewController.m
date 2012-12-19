@@ -21,6 +21,7 @@
 @synthesize pauseButton, toolbar;
 @synthesize optionsButton;
 @synthesize randomNumberLabel;
+@synthesize modeControl;
 
 - (void)viewDidLoad
 {
@@ -65,7 +66,8 @@
         announcer.numberRange = [self numberSliderValue];
         [announcer start];
     }
-    rateSlider.enabled = warningSlider.enabled = numberSlider.enabled = !announcer.isRunning;
+    rateSlider.enabled = warningSlider.enabled = numberSlider.enabled
+      = modeControl.enabled = !announcer.isRunning;
     
     // update toolbar pause/start button
     UIBarButtonSystemItem style = !announcer.isRunning? UIBarButtonSystemItemPlay : UIBarButtonSystemItemPause;
@@ -81,6 +83,9 @@
 
 }
 
+-(BOOL)badmintonMode{
+    return modeControl.selectedSegmentIndex == 1;
+}
 // round rate slider to 0.1 second precision
 -(float)rateSliderValue{
     return round(rateSlider.value*10)/10.0;
@@ -175,7 +180,17 @@
 }
 
 -(float)delayForNumber:(int)number{
-    return [self rateSliderValue];
+    if( self.badmintonMode ){
+        if( number == 5 || number == 6 ){
+            return [self rateSliderValue]*0.667;
+        }else if( number == 3 || number == 4 ){
+            return [self rateSliderValue]*1.5;
+        }else{
+            return [self rateSliderValue];
+        }
+    }else{
+        return [self rateSliderValue];
+    }
 }
 
 @end
