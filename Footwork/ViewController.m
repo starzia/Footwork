@@ -6,9 +6,10 @@
 //
 
 #import "ViewController.h"
+#import "ActionViewController.h"
 
 @interface ViewController (){
-    UIView* _flash;
+    UINavigationItem* _navItem;
 }
 
 @end
@@ -20,7 +21,6 @@
 @synthesize numberSlider, numberSliderLabel;
 @synthesize pauseButton, toolbar;
 @synthesize optionsButton;
-@synthesize randomNumberLabel;
 @synthesize modeControl;
 
 - (void)viewDidLoad
@@ -28,19 +28,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     announcer = [[Announcer alloc] init];
-    announcer.delegate = self;
-    
-    // set up flash view
-    _flash = [[UIView alloc] initWithFrame:self.view.frame];
-    _flash.alpha = 0;
-    _flash.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:_flash];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+-(void)viewWillAppear:(BOOL)animated{
+    // stop announcer when returning to this view
+    [announcer stop];
+}
+
+-(UINavigationItem*)navigationItem{
+    if( !_navItem ){
+        _navItem = [[UINavigationItem alloc] initWithTitle:@"Footwork Options"];
+        pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
+                                                                    target:self
+                                                                    action:@selector(start)];
+        [_navItem setRightBarButtonItem:pauseButton];
+    }
+    return _navItem;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -58,29 +61,21 @@
     [optionsSheet showFromBarButtonItem:self.optionsButton animated:YES];
 }
 
--(IBAction)togglePause:(id)sender{
-    if( announcer.isRunning ){
-        [announcer stop];
-    }else{
-        announcer.warningBeepTime = [self warningSliderValue];
-        announcer.numberRange = [self numberSliderValue];
-        [announcer start];
-    }
-    rateSlider.enabled = warningSlider.enabled = numberSlider.enabled
-      = modeControl.enabled = !announcer.isRunning;
+-(void)start{
+    // create and setup new view controller
+    ActionViewController* actionViewController = [[ActionViewController alloc] init];
+    announcer.delegate = actionViewController;
+    actionViewController.announcer = announcer;
+    actionViewController.badmintonMode = self.badmintonMode;
+    actionViewController.announcementDelay = [self rateSliderValue];
     
-    // update toolbar pause/start button
-    UIBarButtonSystemItem style = !announcer.isRunning? UIBarButtonSystemItemPlay : UIBarButtonSystemItemPause;
-    UIBarButtonItem* newPauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:style
-                                                                                    target:self
-                                                                                    action:@selector(togglePause:)];
-    newPauseButton.style = UIBarButtonItemStyleBordered;
-    pauseButton = newPauseButton;
-    NSMutableArray* toolbarItems = [NSMutableArray arrayWithArray:toolbar.items];
-    [toolbarItems replaceObjectAtIndex:0 withObject:newPauseButton];
-    [toolbar setItems:toolbarItems];
-    [toolbar setNeedsLayout];
-
+    // present view controller
+    [self.navigationController pushViewController:actionViewController animated:YES];
+    
+    // start announcer process
+    announcer.warningBeepTime = [self warningSliderValue];
+    announcer.numberRange = [self numberSliderValue];
+    [announcer start];
 }
 
 -(BOOL)badmintonMode{
@@ -137,17 +132,6 @@
     
 }
 
--(void)flash{
-    [UIView animateWithDuration:0.1
-                     animations:^(void){
-                         _flash.alpha = 1.0;
-                     } completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.1
-                                          animations:^(void){
-                                              _flash.alpha = 0;
-                                          }];
-                     }];
-}
 
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -170,27 +154,6 @@
 						error:(NSError*)error{
 	// make email window disappear
 	[controller dismissModalViewControllerAnimated:YES];
-}
-
-#pragma mark - AnnouncerDelegate
-
--(void)gotNumber:(int)number{
-    [self flash];
-    randomNumberLabel.text = [NSString stringWithFormat:@"%d",number];
-}
-
--(float)delayForNumber:(int)number{
-    if( self.badmintonMode ){
-        if( number == 5 || number == 6 ){
-            return [self rateSliderValue]*0.667;
-        }else if( number == 3 || number == 4 ){
-            return [self rateSliderValue]*1.5;
-        }else{
-            return [self rateSliderValue];
-        }
-    }else{
-        return [self rateSliderValue];
-    }
 }
 
 @end

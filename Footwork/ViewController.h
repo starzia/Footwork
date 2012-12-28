@@ -13,7 +13,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController : UIViewController <UIActionSheetDelegate, 
-    MFMailComposeViewControllerDelegate, AnnouncerDelegate>
+    MFMailComposeViewControllerDelegate>
 
 @property (strong) Announcer* announcer;
 @property (strong) IBOutlet UISlider* rateSlider;
@@ -22,8 +22,6 @@
 @property (strong) IBOutlet UILabel* warningSliderLabel;
 @property (strong) IBOutlet UISlider* numberSlider;
 @property (strong) IBOutlet UILabel* numberSliderLabel;
-
-@property (strong) IBOutlet UILabel* randomNumberLabel;
 
 @property (strong) IBOutlet UIBarButtonItem* pauseButton;
 @property (strong) IBOutlet UIBarButtonItem* optionsButton;

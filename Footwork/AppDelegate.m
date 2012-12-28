@@ -12,14 +12,19 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    // create navigation controller for root view
+    ViewController* optionsView = [[ViewController alloc]
+                                   initWithNibName:@"ViewController" bundle:nil];
+    UINavigationController* navCtrl = [[UINavigationController alloc]
+                                       initWithRootViewController:optionsView];
+
+    self.window.rootViewController = navCtrl;
     [self.window makeKeyAndVisible];
     
     // Turn off the idle timer, since this app doesn't rely on constant touch input
