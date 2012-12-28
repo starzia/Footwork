@@ -40,6 +40,9 @@
 		AA47BEE91560AD3300B76784 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BEE81560AD3300B76784 /* AudioToolbox.framework */; };
 		AA47BEEB1560AF1F00B76784 /* GB.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEEA1560AF1F00B76784 /* GB.wav */; };
 		AA64E80E168E0C400062D795 /* icon_large.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E80D168E0C400062D795 /* icon_large.png */; };
+		AA64E813168E38E40062D795 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E810168E38E40062D795 /* Default-568h@2x.png */; };
+		AA64E814168E38E40062D795 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E811168E38E40062D795 /* Default.png */; };
+		AA64E815168E38E40062D795 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E812168E38E40062D795 /* Default@2x.png */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -85,7 +88,10 @@
 		AA47BEE81560AD3300B76784 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AA47BEEA1560AF1F00B76784 /* GB.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GB.wav; sourceTree = "<group>"; };
 		AA64E80D168E0C400062D795 /* icon_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_large.png; path = artwork/icon_large.png; sourceTree = "<group>"; };
-		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AA64E810168E38E40062D795 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "artwork/Default-568h@2x.png"; sourceTree = "<group>"; };
+		AA64E811168E38E40062D795 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = artwork/Default.png; sourceTree = "<group>"; };
+		AA64E812168E38E40062D795 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "artwork/Default@2x.png"; sourceTree = "<group>"; };
+		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionViewController.xib; sourceTree = "<group>"; };
@@ -111,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				AA16F77C15714B6500C3E6F2 /* MessageUI.framework */,
-				AA9F5230156C797100E6F114 /* icon.png */,
 				AA47BEE81560AD3300B76784 /* AudioToolbox.framework */,
 				AA47BE9C1560964B00B76784 /* Footwork */,
 				AA47BE951560964B00B76784 /* Frameworks */,
@@ -140,7 +145,7 @@
 		AA47BE9C1560964B00B76784 /* Footwork */ = {
 			isa = PBXGroup;
 			children = (
-				AA64E80D168E0C400062D795 /* icon_large.png */,
+				AA64E80F168E38C40062D795 /* images */,
 				AA47BEBA1560A12F00B76784 /* digits */,
 				AA47BEA51560964B00B76784 /* AppDelegate.h */,
 				AA47BEA61560964B00B76784 /* AppDelegate.m */,
@@ -196,6 +201,18 @@
 			path = digits;
 			sourceTree = "<group>";
 		};
+		AA64E80F168E38C40062D795 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AA64E810168E38E40062D795 /* Default-568h@2x.png */,
+				AA64E811168E38E40062D795 /* Default.png */,
+				AA64E812168E38E40062D795 /* Default@2x.png */,
+				AA9F5230156C797100E6F114 /* icon.png */,
+				AA64E80D168E0C400062D795 /* icon_large.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,7 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "VaporStream, Inc.";
+				ORGANIZATIONNAME = "Steve Tarzia";
 			};
 			buildConfigurationList = AA47BE8C1560964B00B76784 /* Build configuration list for PBXProject "Footwork" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -273,6 +290,9 @@
 				AA9F5231156C797100E6F114 /* icon.png in Resources */,
 				AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */,
 				AA64E80E168E0C400062D795 /* icon_large.png in Resources */,
+				AA64E813168E38E40062D795 /* Default-568h@2x.png in Resources */,
+				AA64E814168E38E40062D795 /* Default.png in Resources */,
+				AA64E815168E38E40062D795 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +386,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -379,7 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -84,7 +84,7 @@
     if( number <= 6 ){
         UILabel* marker = [_markers objectAtIndex:number-1];
         if( number == 5 || number == 6 ){
-            marker.backgroundColor = [UIColor yellowColor];
+            marker.backgroundColor = [UIColor orangeColor];
         }else{
             marker.backgroundColor = [UIColor redColor];
         }
