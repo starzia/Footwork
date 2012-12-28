@@ -39,7 +39,7 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUISlider" id="883320604">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">290</int>
+						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{63, 34}, {239, 23}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -55,7 +55,7 @@
 					</object>
 					<object class="IBUILabel" id="302275628">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{20, 35}, {37, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -88,7 +88,7 @@
 					</object>
 					<object class="IBUILabel" id="817979336">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{20, 90}, {37, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -110,7 +110,7 @@
 					</object>
 					<object class="IBUILabel" id="870089209">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{20, 142}, {37, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -132,7 +132,7 @@
 					</object>
 					<object class="IBUILabel" id="461695087">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">300</int>
 						<string key="NSFrame">{{17, 10}, {269, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -153,7 +153,7 @@
 					</object>
 					<object class="IBUISlider" id="236884023">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">290</int>
+						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{63, 89}, {239, 23}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -168,7 +168,7 @@
 					</object>
 					<object class="IBUILabel" id="916738839">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">300</int>
 						<string key="NSFrame">{{17, 60}, {264, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -189,7 +189,7 @@
 					</object>
 					<object class="IBUISlider" id="592270697">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">290</int>
+						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{63, 142}, {239, 23}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -205,7 +205,7 @@
 					</object>
 					<object class="IBUILabel" id="759047683">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">300</int>
 						<string key="NSFrame">{{17, 115}, {264, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -226,7 +226,7 @@
 					</object>
 					<object class="IBUILabel" id="1013567031">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{17, 191}, {55, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
@@ -247,11 +247,10 @@
 					</object>
 					<object class="IBUISegmentedControl" id="448692533">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">290</int>
+						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{80, 180}, {220, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -411,7 +410,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="883320604"/>
 							<reference ref="302275628"/>
-							<reference ref="817979336"/>
 							<reference ref="870089209"/>
 							<reference ref="461695087"/>
 							<reference ref="236884023"/>
@@ -420,6 +418,7 @@
 							<reference ref="759047683"/>
 							<reference ref="448692533"/>
 							<reference ref="1013567031"/>
+							<reference ref="817979336"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

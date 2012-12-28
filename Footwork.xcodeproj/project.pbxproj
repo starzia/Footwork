@@ -39,6 +39,7 @@
 		AA47BEE21560A12F00B76784 /* 9.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BECE1560A12F00B76784 /* 9.wav */; };
 		AA47BEE91560AD3300B76784 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA47BEE81560AD3300B76784 /* AudioToolbox.framework */; };
 		AA47BEEB1560AF1F00B76784 /* GB.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEEA1560AF1F00B76784 /* GB.wav */; };
+		AA64E80E168E0C400062D795 /* icon_large.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E80D168E0C400062D795 /* icon_large.png */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -83,6 +84,7 @@
 		AA47BECE1560A12F00B76784 /* 9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 9.wav; sourceTree = "<group>"; };
 		AA47BEE81560AD3300B76784 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AA47BEEA1560AF1F00B76784 /* GB.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GB.wav; sourceTree = "<group>"; };
+		AA64E80D168E0C400062D795 /* icon_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_large.png; path = artwork/icon_large.png; sourceTree = "<group>"; };
 		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		AA47BE9C1560964B00B76784 /* Footwork */ = {
 			isa = PBXGroup;
 			children = (
+				AA64E80D168E0C400062D795 /* icon_large.png */,
 				AA47BEBA1560A12F00B76784 /* digits */,
 				AA47BEA51560964B00B76784 /* AppDelegate.h */,
 				AA47BEA61560964B00B76784 /* AppDelegate.m */,
@@ -269,6 +272,7 @@
 				AA47BEEB1560AF1F00B76784 /* GB.wav in Resources */,
 				AA9F5231156C797100E6F114 /* icon.png in Resources */,
 				AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */,
+				AA64E80E168E0C400062D795 /* icon_large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
