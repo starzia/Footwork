@@ -29,7 +29,6 @@
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 
 
--(IBAction)togglePause:(id)sender;
 -(IBAction)rateSliderChanged:(id)sender;
 -(IBAction)warningSliderChanged:(id)sender;
 -(IBAction)numberSliderChanged:(id)sender;

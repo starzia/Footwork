@@ -26,6 +26,8 @@
 @synthesize marker4;
 @synthesize marker5;
 @synthesize marker6;
+@synthesize courtImage;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +49,12 @@
     _flash.alpha = 0;
     _flash.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_flash];
+    
+    // clear badminton features, if disabled
+    for( UILabel* marker in _markers ){
+        marker.hidden = !badmintonMode;
+    }
+    courtImage.hidden = !badmintonMode;
     
 }
 
@@ -88,7 +96,7 @@
         if( number == 5 || number == 6 ){
             return self.announcementDelay * 0.667;
         }else if( number == 3 || number == 4 ){
-            return self.announcementDelay * 1.5;
+            return self.announcementDelay * 1.3;
         }else{
             return self.announcementDelay;
         }
