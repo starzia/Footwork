@@ -41,7 +41,11 @@
         pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
                                                                     target:self
                                                                     action:@selector(start)];
+        optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                            target:self
+                                                            action:@selector(clickedOptions:)];
         [_navItem setRightBarButtonItem:pauseButton];
+        [_navItem setLeftBarButtonItem:optionsButton];
     }
     return _navItem;
 }
