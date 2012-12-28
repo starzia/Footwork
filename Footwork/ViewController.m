@@ -124,7 +124,7 @@
                             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
                             ]];
         [mailer setMessageBody:@"" isHTML:NO];
-        [self presentModalViewController:mailer animated:YES];
+        [self presentViewController:mailer animated:YES completion:nil];
     }else{
         UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Email unavailable" 
                                                           message:@"Please configure your email settings before trying to use this option." 
@@ -157,7 +157,7 @@
 		  didFinishWithResult:(MFMailComposeResult)result 
 						error:(NSError*)error{
 	// make email window disappear
-	[controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
