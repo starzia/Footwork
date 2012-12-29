@@ -23,14 +23,17 @@
 @property (strong) IBOutlet UISlider* numberSlider;
 @property (strong) IBOutlet UILabel* numberSliderLabel;
 
-@property (strong) IBOutlet UIBarButtonItem* pauseButton;
-@property (strong) IBOutlet UIBarButtonItem* optionsButton;
+@property (strong) UIBarButtonItem* pauseButton;
+@property (strong) UIBarButtonItem* optionsButton;
 @property (strong) IBOutlet UIToolbar* toolbar;
 @property (strong) IBOutlet UISegmentedControl* modeControl;
+@property (strong) IBOutlet UILabel* instructions;
 
 
 -(IBAction)rateSliderChanged:(id)sender;
 -(IBAction)warningSliderChanged:(id)sender;
 -(IBAction)numberSliderChanged:(id)sender;
 -(IBAction)clickedOptions:(id)sender;
+-(IBAction)modeChanged:(id)sender;
+
 @end

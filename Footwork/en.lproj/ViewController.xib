@@ -251,7 +251,7 @@
 						<string key="NSFrame">{{80, 201}, {220, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="907816386"/>
+						<reference key="NSNextKeyView" ref="422136488"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -278,32 +278,35 @@
 							<reference ref="4"/>
 						</array>
 					</object>
-					<object class="IBUILabel" id="907816386">
+					<object class="IBUILabel" id="422136488">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">282</int>
-						<string key="NSFrame">{{17, 238}, {285, 202}}</string>
+						<string key="NSFrame">{{17, 258}, {285, 182}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">In Badminton mode, "seconds between announcements" varies depending on which number is called.  Locations 5 &amp; 6 get 67% of the set time and locations 3 &amp; 4 get 130%.</string>
+						<string key="IBUIText">In Badminton mode, "seconds between announcements" varies depending on which number is called.  Locations 5 &amp; 6 are reduced to 67% of the set time and locations 3 &amp; 4 are increased to 130%.</string>
 						<reference key="IBUITextColor" ref="435683418"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUINumberOfLines">6</int>
 						<int key="IBUILineBreakMode">0</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<string key="name">Helvetica</string>
+							<string key="name">Helvetica-Light</string>
 							<string key="family">Helvetica</string>
 							<int key="traits">0</int>
-							<double key="pointSize">17</double>
+							<double key="pointSize">14</double>
 						</object>
-						<reference key="IBUIFont" ref="923047742"/>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">14</double>
+							<int key="NSfFlags">16</int>
+						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<double key="preferredMaxLayoutWidth">285</double>
 					</object>
@@ -388,6 +391,14 @@
 					<int key="connectionID">51</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">instructions</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="422136488"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">rateSliderChanged:</string>
 						<reference key="source" ref="883320604"/>
@@ -413,6 +424,15 @@
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">44</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">modeChanged:</string>
+						<reference key="source" ref="448692533"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">55</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -449,7 +469,7 @@
 							<reference ref="448692533"/>
 							<reference ref="1013567031"/>
 							<reference ref="817979336"/>
-							<reference ref="907816386"/>
+							<reference ref="422136488"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -510,7 +530,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
-						<reference key="object" ref="907816386"/>
+						<reference key="object" ref="422136488"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -539,7 +559,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">53</int>
+			<int key="maxID">55</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -548,6 +568,7 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="clickedOptions:">id</string>
+						<string key="modeChanged:">id</string>
 						<string key="numberSliderChanged:">id</string>
 						<string key="rateSliderChanged:">id</string>
 						<string key="warningSliderChanged:">id</string>
@@ -555,6 +576,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="clickedOptions:">
 							<string key="name">clickedOptions:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="modeChanged:">
+							<string key="name">modeChanged:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="numberSliderChanged:">
@@ -571,11 +596,10 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="instructions">UILabel</string>
 						<string key="modeControl">UISegmentedControl</string>
 						<string key="numberSlider">UISlider</string>
 						<string key="numberSliderLabel">UILabel</string>
-						<string key="optionsButton">UIBarButtonItem</string>
-						<string key="pauseButton">UIBarButtonItem</string>
 						<string key="rateSlider">UISlider</string>
 						<string key="rateSliderLabel">UILabel</string>
 						<string key="toolbar">UIToolbar</string>
@@ -583,6 +607,10 @@
 						<string key="warningSliderLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="instructions">
+							<string key="name">instructions</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="modeControl">
 							<string key="name">modeControl</string>
 							<string key="candidateClassName">UISegmentedControl</string>
@@ -594,14 +622,6 @@
 						<object class="IBToOneOutletInfo" key="numberSliderLabel">
 							<string key="name">numberSliderLabel</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="optionsButton">
-							<string key="name">optionsButton</string>
-							<string key="candidateClassName">UIBarButtonItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="pauseButton">
-							<string key="name">pauseButton</string>
-							<string key="candidateClassName">UIBarButtonItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="rateSlider">
 							<string key="name">rateSlider</string>

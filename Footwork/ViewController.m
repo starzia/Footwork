@@ -22,6 +22,7 @@
 @synthesize pauseButton, toolbar;
 @synthesize optionsButton;
 @synthesize modeControl;
+@synthesize instructions;
 
 - (void)viewDidLoad
 {
@@ -63,6 +64,11 @@
                                                      otherButtonTitles:@"Visit the website",
                                                                        @"Email us feedback",nil];
     [optionsSheet showFromBarButtonItem:self.optionsButton animated:YES];
+}
+
+-(IBAction)modeChanged:(id)sender{
+    // hide instructions when not in badminton mode
+    instructions.hidden = !self.badmintonMode;
 }
 
 -(void)start{
