@@ -284,13 +284,14 @@
 						<string key="NSFrame">{{17, 258}, {285, 182}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">In Badminton mode, "seconds between announcements" varies depending on which number is called.  Locations 5 &amp; 6 are reduced to 67% of the set time and locations 3 &amp; 4 are increased to 130%.</string>
+						<string key="IBUIText">In Badminton mode, "seconds between announcements" varies depending on which number is called.  Locations 5 &amp; 6 are reduced to 80% of the set time and locations 3 &amp; 4 are increased to 130%.</string>
 						<reference key="IBUITextColor" ref="435683418"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>

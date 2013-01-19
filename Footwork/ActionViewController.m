@@ -94,7 +94,7 @@
 -(float)delayForNumber:(int)number{
     if( self.badmintonMode ){
         if( number == 5 || number == 6 ){
-            return self.announcementDelay * 0.667;
+            return self.announcementDelay * 0.8;
         }else if( number == 3 || number == 4 ){
             return self.announcementDelay * 1.3;
         }else{
