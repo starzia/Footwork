@@ -15,9 +15,11 @@
 @implementation ActionViewController{
     UIView* _flash;
     NSArray* _markers;
+    NSTimer* _clockTimer;
+    int _clockTicks;
 }
 
-@synthesize randomNumberLabel;
+@synthesize timeLabel;
 @synthesize badmintonMode;
 @synthesize announcementDelay;
 @synthesize marker1;
@@ -58,6 +60,26 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    // cancel old timer
+    _clockTicks = 0;
+    if( _clockTimer ) [_clockTimer invalidate];
+    // create new timer
+    _clockTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                   target:self
+                                                 selector:@selector(tick)
+                                                 userInfo:nil
+                                                  repeats:YES];
+    [self tick]; // reset to 0:00
+}
+
+// update timer display
+-(void)tick{
+    timeLabel.text = [NSString stringWithFormat:@"%d:%02d",
+                      _clockTicks/60, _clockTicks%60 ];
+    _clockTicks++;
+}
+
 -(void)flash{
     [UIView animateWithDuration:0.1
                      animations:^(void){
@@ -74,7 +96,6 @@
 
 -(void)gotNumber:(int)number{
     [self flash];
-    randomNumberLabel.text = [NSString stringWithFormat:@"%d",number];
     
     // clear old marker
     for( UILabel* marker in _markers ){

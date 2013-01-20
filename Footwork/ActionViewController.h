@@ -12,7 +12,7 @@
 @interface ActionViewController : UIViewController <AnnouncerDelegate>
 
 @property (strong) Announcer* announcer;
-@property (strong) IBOutlet UILabel* randomNumberLabel;
+@property (strong) IBOutlet UILabel* timeLabel;
 @property BOOL badmintonMode;
 @property float announcementDelay;
 @property (strong) IBOutlet UILabel* marker1;
