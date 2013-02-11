@@ -49,6 +49,7 @@
 		AA64E830168E7ADE0062D795 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E82F168E7ADE0062D795 /* Default-Landscape@2x~ipad.png */; };
 		AA64E832168E7AE30062D795 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E831168E7AE30062D795 /* Default-Portrait@2x~ipad.png */; };
 		AA64E834168E82F10062D795 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E833168E82F10062D795 /* icon-72.png */; };
+		AA656A7516BDF4BF00BBDBFB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA656A7416BDF4BF00BBDBFB /* HomeViewController.m */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -103,6 +104,8 @@
 		AA64E82F168E7ADE0062D795 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		AA64E831168E7AE30062D795 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		AA64E833168E82F10062D795 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		AA656A7316BDF4BF00BBDBFB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		AA656A7416BDF4BF00BBDBFB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				AABAB09E16828A7A00F5CC31 /* ActionViewController.h */,
 				AABAB09F16828A7A00F5CC31 /* ActionViewController.m */,
 				AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */,
+				AA656A7316BDF4BF00BBDBFB /* HomeViewController.h */,
+				AA656A7416BDF4BF00BBDBFB /* HomeViewController.m */,
 			);
 			path = Footwork;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				AA47BEAA1560964B00B76784 /* ViewController.m in Sources */,
 				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
 				AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */,
+				AA656A7516BDF4BF00BBDBFB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

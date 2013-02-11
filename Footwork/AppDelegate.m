@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
@@ -19,10 +19,10 @@
     // Override point for customization after application launch.
     
     // create navigation controller for root view
-    ViewController* optionsView = [[ViewController alloc]
-                                   initWithNibName:@"ViewController" bundle:nil];
+    HomeViewController* homeView = [[HomeViewController alloc]
+                                       initWithStyle:UITableViewStyleGrouped];
     UINavigationController* navCtrl = [[UINavigationController alloc]
-                                       initWithRootViewController:optionsView];
+                                       initWithRootViewController:homeView];
 
     self.window.rootViewController = navCtrl;
     [self.window makeKeyAndVisible];
