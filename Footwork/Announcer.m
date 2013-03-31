@@ -79,6 +79,8 @@
     NSLog( @"ready..." );
     // play tone
     [self playSoundFile:@"GB"];
+    // show warning animation
+    [delegate startWarningWithDuration:warningBeepTime];
 }
 
 -(void)start{

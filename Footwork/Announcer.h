@@ -11,6 +11,9 @@
 -(void)gotNumber:(int)number;
 /** return the number of seconds to wait after announcing the given number */
 -(float)delayForNumber:(int)number;
+
+-(void)startWarningWithDuration:(float)duration;
+
 @end
 
 @interface Announcer : NSObject

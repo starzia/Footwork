@@ -82,22 +82,19 @@
     _clockTicks++;
 }
 
--(void)flash{
-    [UIView animateWithDuration:0.1
+#pragma mark - AnnouncerDelegate
+
+-(void)startWarningWithDuration:(float)duration{
+    // ramp up to a black mask, then go back to clear
+    [UIView animateWithDuration:duration
                      animations:^(void){
                          _flash.alpha = 1.0;
                      } completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.1
-                                          animations:^(void){
-                                              _flash.alpha = 0;
-                                          }];
+                         _flash.alpha = 0;
                      }];
 }
 
-#pragma mark - AnnouncerDelegate
-
 -(void)gotNumber:(int)number{
-    [self flash];
     
     // clear old marker
     for( UILabel* marker in _markers ){
@@ -116,7 +113,7 @@
 
 -(float)delayForNumber:(int)number{
     if( self.badmintonMode ){
-        if( number == 5 || number == 6 ){
+        if( number == 5 || number == 6 || number == 7 ){
             return self.announcementDelay * 0.8;
         }else if( number == 3 || number == 4 ){
             return self.announcementDelay * 1.3;
