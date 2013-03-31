@@ -30,6 +30,7 @@
 @synthesize marker6;
 @synthesize marker7;
 @synthesize marker8;
+@synthesize numberLabel;
 @synthesize courtImage;
 
 
@@ -60,6 +61,7 @@
         marker.hidden = !(badmintonMode && self.announcer.numberRange >= i+1);
     }
     courtImage.hidden = !badmintonMode;
+    numberLabel.hidden = badmintonMode;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -109,6 +111,8 @@
             marker.backgroundColor = [UIColor redColor];
         }
     }
+    // set number label (for generic mode)
+    numberLabel.text = [NSString stringWithFormat:@"%d",number];
 }
 
 -(float)delayForNumber:(int)number{
