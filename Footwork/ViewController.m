@@ -78,13 +78,14 @@
     actionViewController.announcer = announcer;
     actionViewController.badmintonMode = self.badmintonMode;
     actionViewController.announcementDelay = [self rateSliderValue];
+    // configure the announcer
+    announcer.warningBeepTime = [self warningSliderValue];
+    announcer.numberRange = [self numberSliderValue];
     
     // present view controller
     [self.navigationController pushViewController:actionViewController animated:YES];
     
     // start announcer process
-    announcer.warningBeepTime = [self warningSliderValue];
-    announcer.numberRange = [self numberSliderValue];
     [announcer start];
 }
 

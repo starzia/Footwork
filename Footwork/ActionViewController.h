@@ -21,6 +21,8 @@
 @property (strong) IBOutlet UILabel* marker4;
 @property (strong) IBOutlet UILabel* marker5;
 @property (strong) IBOutlet UILabel* marker6;
+@property (strong) IBOutlet UILabel* marker7;
+@property (strong) IBOutlet UILabel* marker8;
 @property (strong) IBOutlet UIImageView* courtImage;
 
 @end

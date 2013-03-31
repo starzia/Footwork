@@ -28,6 +28,8 @@
 @synthesize marker4;
 @synthesize marker5;
 @synthesize marker6;
+@synthesize marker7;
+@synthesize marker8;
 @synthesize courtImage;
 
 
@@ -44,7 +46,7 @@
 
 -(void)viewDidLoad{
     _markers = [NSArray arrayWithObjects:marker1, marker2, marker3,
-                marker4, marker5, marker6, nil];
+                marker4, marker5, marker6, marker7, marker8, nil];
     // set up flash view
     _flash = [[UIView alloc] initWithFrame:self.view.frame];
     _flash.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -53,11 +55,11 @@
     [self.view addSubview:_flash];
     
     // clear badminton features, if disabled
-    for( UILabel* marker in _markers ){
-        marker.hidden = !badmintonMode;
+    for( int i=0; i<_markers.count; i++ ){
+        UILabel* marker = [_markers objectAtIndex:i];
+        marker.hidden = !(badmintonMode && self.announcer.numberRange >= i+1);
     }
     courtImage.hidden = !badmintonMode;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -102,9 +104,9 @@
         marker.backgroundColor = [UIColor clearColor];
     }
     // set new marker
-    if( number <= 6 ){
+    if( number <= 8 ){
         UILabel* marker = [_markers objectAtIndex:number-1];
-        if( number == 5 || number == 6 ){
+        if( number > 4 ){
             marker.backgroundColor = [UIColor orangeColor];
         }else{
             marker.backgroundColor = [UIColor redColor];
