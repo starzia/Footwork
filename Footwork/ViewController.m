@@ -25,6 +25,8 @@
 @synthesize instructions;
 @synthesize rateCell, warningCell, numberCell;
 @synthesize instructionsCell, modeCell;
+@synthesize startCell;
+@synthesize emailCell, websiteCell;
 
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
@@ -199,32 +201,64 @@
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    if( section == 0 ){
+        return 1;
+    }else if( section == 3 ){
+        return 3;
+    }else{
+        return 2;
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if( indexPath.section == 0 ){
-        return instructionsCell;
+        return startCell;
     }else if( indexPath.section == 1 ){
-        return rateCell;
+        if( indexPath.row == 0 ){
+            return rateCell;
+        }else{
+            return warningCell;
+        }
     }else if( indexPath.section == 2 ){
-        return warningCell;
+        if( indexPath.row == 0 ){
+            return numberCell;
+        }else{
+            return modeCell;
+        }
     }else if( indexPath.section == 3 ){
-        return numberCell;
-    }else if( indexPath.section == 4 ){
-        return modeCell;
+        if( indexPath.row == 0 ){
+            return instructionsCell;
+        }else if( indexPath.row == 1 ){
+            return websiteCell;
+        }else{
+            return emailCell;
+        }
     }
     else return nil;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"test";
+    if( section == 1 ){
+        return @"Timing";
+    }else if( section == 2 ){
+        return @"Numbers";
+    }
+    else return @"";
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if( indexPath.section == 2 && indexPath.row == 1 ){
+        return 60;
+    }else return 40;
 }
 
 #pragma mark - UITableViewDelegate
 
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    return ( indexPath.section == 0 || indexPath.section == 3 );
+}
 @end

@@ -28,6 +28,9 @@
 @property (strong) IBOutlet UITableViewCell* warningCell;
 @property (strong) IBOutlet UITableViewCell* numberCell;
 @property (strong) IBOutlet UITableViewCell* modeCell;
+@property (strong) IBOutlet UITableViewCell* startCell;
+@property (strong) IBOutlet UITableViewCell* websiteCell;
+@property (strong) IBOutlet UITableViewCell* emailCell;
 
 @property (strong) UIBarButtonItem* pauseButton;
 @property (strong) UIBarButtonItem* optionsButton;
