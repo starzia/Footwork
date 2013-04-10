@@ -19,10 +19,40 @@
 @synthesize rateSlider, rateSliderLabel;
 @synthesize warningSlider, warningSliderLabel;
 @synthesize numberSlider, numberSliderLabel;
-@synthesize pauseButton, toolbar;
+@synthesize pauseButton;
 @synthesize optionsButton;
 @synthesize modeControl;
 @synthesize instructions;
+@synthesize rateCell, warningCell, numberCell;
+@synthesize instructionsCell, modeCell;
+
+-(id)initWithStyle:(UITableViewStyle)style{
+    self = [super initWithStyle:style];
+    if( self ){
+        // initialize controls
+        rateSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
+        rateSlider.minimumValue = 1;
+        rateSlider.maximumValue = 5;
+        rateSlider.value = 3;
+        rateSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        
+        warningSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
+        warningSlider.minimumValue = 0;
+        warningSlider.maximumValue = 2;
+        warningSlider.value = .6;
+        warningSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        
+        numberSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
+        numberSlider.minimumValue = 1;
+        numberSlider.maximumValue = 10;
+        numberSlider.value = 6;
+        numberSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        
+        modeControl = [[UISegmentedControl alloc] initWithItems:@[@"Generic", @"Badminton"]];
+        modeControl.selectedSegmentIndex = 1;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -166,5 +196,35 @@
 	// make email window disappear
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 5;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if( indexPath.section == 0 ){
+        return instructionsCell;
+    }else if( indexPath.section == 1 ){
+        return rateCell;
+    }else if( indexPath.section == 2 ){
+        return warningCell;
+    }else if( indexPath.section == 3 ){
+        return numberCell;
+    }else if( indexPath.section == 4 ){
+        return modeCell;
+    }
+    else return nil;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"test";
+}
+
+#pragma mark - UITableViewDelegate
 
 @end

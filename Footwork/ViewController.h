@@ -12,8 +12,8 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UIViewController <UIActionSheetDelegate, 
-    MFMailComposeViewControllerDelegate>
+@interface ViewController : UITableViewController <UIActionSheetDelegate,
+    MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) Announcer* announcer;
 @property (strong) IBOutlet UISlider* rateSlider;
@@ -23,9 +23,14 @@
 @property (strong) IBOutlet UISlider* numberSlider;
 @property (strong) IBOutlet UILabel* numberSliderLabel;
 
+@property (strong) IBOutlet UITableViewCell* instructionsCell;
+@property (strong) IBOutlet UITableViewCell* rateCell;
+@property (strong) IBOutlet UITableViewCell* warningCell;
+@property (strong) IBOutlet UITableViewCell* numberCell;
+@property (strong) IBOutlet UITableViewCell* modeCell;
+
 @property (strong) UIBarButtonItem* pauseButton;
 @property (strong) UIBarButtonItem* optionsButton;
-@property (strong) IBOutlet UIToolbar* toolbar;
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 @property (strong) IBOutlet UILabel* instructions;
 

@@ -20,7 +20,7 @@
     
     // create navigation controller for root view
     ViewController* optionsView = [[ViewController alloc]
-                                   initWithNibName:@"ViewController" bundle:nil];
+                                   initWithStyle:UITableViewStyleGrouped];
     UINavigationController* navCtrl = [[UINavigationController alloc]
                                        initWithRootViewController:optionsView];
 
