@@ -39,7 +39,6 @@
 -(IBAction)rateSliderChanged:(id)sender;
 -(IBAction)warningSliderChanged:(id)sender;
 -(IBAction)numberSliderChanged:(id)sender;
--(IBAction)clickedOptions:(id)sender;
 -(IBAction)modeChanged:(id)sender;
 
 @end
