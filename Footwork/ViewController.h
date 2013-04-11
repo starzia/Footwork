@@ -32,8 +32,6 @@
 @property (strong) IBOutlet UITableViewCell* websiteCell;
 @property (strong) IBOutlet UITableViewCell* emailCell;
 
-@property (strong) UIBarButtonItem* pauseButton;
-@property (strong) UIBarButtonItem* optionsButton;
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 @property (strong) IBOutlet UILabel* instructions;
 

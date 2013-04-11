@@ -19,8 +19,6 @@
 @synthesize rateSlider, rateSliderLabel;
 @synthesize warningSlider, warningSliderLabel;
 @synthesize numberSlider, numberSliderLabel;
-@synthesize pauseButton;
-@synthesize optionsButton;
 @synthesize modeControl;
 @synthesize instructions;
 @synthesize rateCell, warningCell, numberCell;
@@ -71,14 +69,6 @@
 -(UINavigationItem*)navigationItem{
     if( !_navItem ){
         _navItem = [[UINavigationItem alloc] initWithTitle:@"Footwork Options"];
-        pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
-                                                                    target:self
-                                                                    action:@selector(start)];
-        optionsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                            target:self
-                                                            action:@selector(clickedOptions:)];
-        [_navItem setRightBarButtonItem:pauseButton];
-        [_navItem setLeftBarButtonItem:optionsButton];
     }
     return _navItem;
 }
@@ -86,16 +76,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
-}
-
--(IBAction)clickedOptions:(id)sender{
-    UIActionSheet* optionsSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                              delegate:self 
-                                                     cancelButtonTitle:@"Cancel" 
-                                                destructiveButtonTitle:nil 
-                                                     otherButtonTitles:@"Visit the website",
-                                                                       @"Email us feedback",nil];
-    [optionsSheet showFromBarButtonItem:self.optionsButton animated:YES];
 }
 
 -(IBAction)modeChanged:(id)sender{
@@ -179,8 +159,6 @@
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if( buttonIndex == 0 ){ // zero is the bottom red buttom for cancel confirmation
-        // website
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
     }else if( buttonIndex == 1 ) {
         // feedback
         [self email];
@@ -261,4 +239,30 @@
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
     return ( indexPath.section == 0 || indexPath.section == 3 );
 }
+
+
+- (NSIndexPath *)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // take the appropriate action
+    if( indexPath.section == 0 ){
+        // start
+        [self start];
+    }else if( indexPath.section == 3 ){
+        if( indexPath.row == 0 ){
+            // instructions
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]];
+        }else if( indexPath.row == 1 ){
+            // website
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
+        }else{
+            // email
+            [self email];
+        }
+    }
+    
+    // unselect
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    return indexPath; // approve selection
+}
 @end
+
