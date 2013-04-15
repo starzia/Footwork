@@ -20,7 +20,6 @@
 @synthesize warningSlider, warningSliderLabel;
 @synthesize numberSlider, numberSliderLabel;
 @synthesize modeControl;
-@synthesize instructions;
 @synthesize rateCell, warningCell, numberCell;
 @synthesize instructionsCell, modeCell;
 @synthesize startCell;
@@ -79,8 +78,7 @@
 }
 
 -(IBAction)modeChanged:(id)sender{
-    // hide instructions when not in badminton mode
-    instructions.hidden = !self.badmintonMode;
+    // no action required
 }
 
 -(void)start{

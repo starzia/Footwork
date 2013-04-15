@@ -33,7 +33,6 @@
 @property (strong) IBOutlet UITableViewCell* emailCell;
 
 @property (strong) IBOutlet UISegmentedControl* modeControl;
-@property (strong) IBOutlet UILabel* instructions;
 
 
 -(IBAction)rateSliderChanged:(id)sender;
