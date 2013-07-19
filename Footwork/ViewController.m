@@ -181,18 +181,16 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if( section == 0 ){
-        return 1;
-    }else if( section == 3 ){
-        return 3;
-    }else{
-        return 2;
-    }
+    return 2;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if( indexPath.section == 0 ){
-        return startCell;
+        if( indexPath.row == 0 ){
+            return startCell;
+        }else{
+            return instructionsCell;
+        }
     }else if( indexPath.section == 1 ){
         if( indexPath.row == 0 ){
             return rateCell;
@@ -207,8 +205,6 @@
         }
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
-            return instructionsCell;
-        }else if( indexPath.row == 1 ){
             return websiteCell;
         }else{
             return emailCell;
@@ -227,8 +223,10 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if( indexPath.section == 2 && indexPath.row == 1 ){
+    if( indexPath.section == 2 && indexPath.row == 1 ){ /* make toggle row larger */
         return 60;
+    }else if( indexPath.section == 0 && indexPath.row == 0 /* make the "start" row larger */ ){
+        return 50;
     }else return 40;
 }
 
@@ -242,13 +240,15 @@
 - (NSIndexPath *)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // take the appropriate action
     if( indexPath.section == 0 ){
-        // start
-        [self start];
-    }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
+            // start
+            [self start];
+        }else{
             // instructions
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]];
-        }else if( indexPath.row == 1 ){
+        }
+    }else if( indexPath.section == 3 ){
+        if( indexPath.row == 0 ){
             // website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
         }else{
