@@ -24,6 +24,7 @@
 @synthesize instructionsCell, modeCell;
 @synthesize startCell;
 @synthesize emailCell, websiteCell;
+@synthesize recommendCell, reviewCell;
 
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
@@ -130,7 +131,16 @@
     numberSliderLabel.text = [NSString stringWithFormat:@"%d",[self numberSliderValue]];
 }
 
--(void)email{
+-(void)emailFailed{
+    UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Email unavailable"
+                                                      message:@"Please configure your email settings before trying to use this option."
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    [myAlert show];
+}
+
+-(void)emailMe{
     if( [MFMailComposeViewController canSendMail] ){
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         mailer.mailComposeDelegate = self;
@@ -143,27 +153,24 @@
         [mailer setMessageBody:@"" isHTML:NO];
         [self presentViewController:mailer animated:YES completion:nil];
     }else{
-        UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Email unavailable" 
-                                                          message:@"Please configure your email settings before trying to use this option." 
-                                                         delegate:self 
-                                                cancelButtonTitle:@"OK" 
-                                                otherButtonTitles:nil];
-        [myAlert show];	
-    }
-    
-}
-
-
-#pragma mark - UIActionSheetDelegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if( buttonIndex == 0 ){ // zero is the bottom red buttom for cancel confirmation
-    }else if( buttonIndex == 1 ) {
-        // feedback
-        [self email];
-    }else if( buttonIndex == 2 ){
-        // dismiss view
+        [self emailFailed];
     }
 }
+
+-(void)emailFriend{
+    if( [MFMailComposeViewController canSendMail] ){
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        mailer.mailComposeDelegate = self;
+        
+        // email feedback
+        [mailer setSubject:@"Badminton Footwork Trainer for iPhone & iPad"];
+        [mailer setMessageBody:@"I thought you might want to try a free app for Badminton singles training.  It's called <a href=\"http://itunes.apple.com/app/badminton-footwork-trainer/id530904252?mt=8\">Badminton Footwork Trainer.</a>" isHTML:YES];
+        [self presentViewController:mailer animated:YES completion:nil];
+    }else{
+        [self emailFailed];
+    }
+}
+
 
 #pragma mark - MKMailComposeViewControllerDelegate
 
@@ -181,7 +188,11 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    if( section == 3 ){
+        return 4;
+    }else{
+        return 2;
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -205,6 +216,10 @@
         }
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
+            return recommendCell;
+        }else if( indexPath.row == 1 ){
+            return reviewCell;
+        }else if( indexPath.row == 2 ){
             return websiteCell;
         }else{
             return emailCell;
@@ -249,11 +264,18 @@
         }
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
+            // email friend
+            [self emailFriend];
+        }else if( indexPath.row == 1 ){
+            // write an app review
+            NSString* url = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=530904252"];
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+        }else if( indexPath.row == 2 ){
             // website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
         }else{
-            // email
-            [self email];
+            // email me
+            [self emailMe];
         }
     }
     

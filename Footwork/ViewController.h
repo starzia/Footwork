@@ -31,6 +31,8 @@
 @property (strong) IBOutlet UITableViewCell* startCell;
 @property (strong) IBOutlet UITableViewCell* websiteCell;
 @property (strong) IBOutlet UITableViewCell* emailCell;
+@property (strong) IBOutlet UITableViewCell* recommendCell;
+@property (strong) IBOutlet UITableViewCell* reviewCell;
 
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 
