@@ -164,7 +164,7 @@
         
         // email feedback
         [mailer setSubject:@"Badminton Footwork Trainer for iPhone & iPad"];
-        [mailer setMessageBody:@"I thought you might want to try a free app for Badminton singles training.  It's called <a href=\"http://itunes.apple.com/app/badminton-footwork-trainer/id530904252?mt=8\">Badminton Footwork Trainer.</a>" isHTML:YES];
+        [mailer setMessageBody:@"I thought you might want to try a free app for badminton singles training.  It's called <a href=\"http://itunes.apple.com/app/badminton-footwork-trainer/id530904252?mt=8\">Badminton Footwork Trainer.</a>" isHTML:YES];
         [self presentViewController:mailer animated:YES completion:nil];
     }else{
         [self emailFailed];
@@ -239,7 +239,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if( indexPath.section == 2 && indexPath.row == 1 ){ /* make toggle row larger */
-        return 60;
+        return 100;
     }else if( indexPath.section == 0 && indexPath.row == 0 /* make the "start" row larger */ ){
         return 50;
     }else return 40;
