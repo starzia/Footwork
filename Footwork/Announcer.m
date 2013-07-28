@@ -85,7 +85,16 @@
 
 -(void)start{
     NSLog( @"started announcer" );
-    [self announce];
+    // start with a warning
+    if( warningBeepTime > 0 ){
+        [self warn];
+    }
+    // then follow-up with announcement
+    [NSTimer scheduledTimerWithTimeInterval:warningBeepTime
+                                     target:self
+                                   selector:@selector(announce)
+                                   userInfo:nil
+                                    repeats:NO];
     _isRunning = YES;
 }
 
