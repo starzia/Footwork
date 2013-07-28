@@ -10,6 +10,7 @@
 
 @interface ViewController (){
     UINavigationItem* _navItem;
+    UIAlertView* _waitAlert;
 }
 
 @end
@@ -82,7 +83,34 @@
     // no action required
 }
 
+// throw up UIAlert and wait for a few seconds before really starting
+-(void)preStart{
+    // alert user that fingerprint is not yet ready
+	_waitAlert = [[UIAlertView alloc] initWithTitle:@"Training will begin in 3 seconds."
+                                            message:nil
+                                           delegate:nil
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:nil];
+	[_waitAlert show];
+	// add spinning activity indicator
+	UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]
+										  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	indicator.center = CGPointMake(140, 90);
+	[indicator startAnimating];
+	[_waitAlert addSubview:indicator];
+    
+    // start timer
+    [NSTimer scheduledTimerWithTimeInterval:3
+                                     target:self
+                                   selector:@selector(start)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
 -(void)start{
+    // dismiss "wait" alert
+    [_waitAlert dismissWithClickedButtonIndex:0 animated:YES];
+    
     // create and setup new view controller
     ActionViewController* actionViewController = [[ActionViewController alloc] init];
     announcer.delegate = actionViewController;
@@ -257,7 +285,7 @@
     if( indexPath.section == 0 ){
         if( indexPath.row == 0 ){
             // start
-            [self start];
+            [self preStart];
         }else{
             // instructions
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]];
