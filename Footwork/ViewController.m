@@ -125,7 +125,8 @@
     [self.navigationController pushViewController:actionViewController animated:YES];
     
     // start announcer process
-    [announcer start];
+    //  delay before starting so it occurs after the viewController push animation completes
+    [announcer performSelector:@selector(start) withObject:nil afterDelay:0.3];
 }
 
 -(BOOL)badmintonMode{
