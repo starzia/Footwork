@@ -14,17 +14,12 @@
     BOOL _isRunning;
 }
 
-@synthesize warningBeepTime;
-@synthesize numberRange;
-@synthesize delegate;
+@synthesize configDelegate, eventDelegate;
 
 
 -(id)init{
     self = [super init];
     if( self ){
-        // set property defaults
-        warningBeepTime = 1;
-        numberRange = 4;
         _isRunning = NO;
     }
     return self;
@@ -43,9 +38,11 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
-/** return random number between 1 and numberRange (inclusive) */
+/** return random number from configDelegate.numbersToDrawFrom */
 -(NSInteger)getRandom{
-    return 1 + ( arc4random() % numberRange );
+    NSArray* numbers = configDelegate.numbersToDrawFrom;
+    int randIdx = ( arc4random() % numbers.count );
+    return ((NSNumber*)numbers[randIdx]).intValue;
 }
 
 -(void)announce{
@@ -54,18 +51,19 @@
     NSString* filename = [NSString stringWithFormat:@"%d",randomNum];
     [self playSoundFile:filename];
     
-    if( delegate ) [delegate gotNumber:randomNum];
+    if( eventDelegate ) [eventDelegate gotNumber:randomNum];
     
     // set up timers for next announcement
-    float delay = [self.delegate delayForNumber:randomNum];
+    float delay = [configDelegate delayForNumber:randomNum];
     _mainTimer = [NSTimer scheduledTimerWithTimeInterval:delay
                                                   target:self
                                                 selector:@selector(announce)
                                                 userInfo:nil
                                                  repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSDefaultRunLoopMode];
-    if( warningBeepTime > 0 ){
-        _warningTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:delay-warningBeepTime]
+    if( configDelegate.warningBeepTime > 0 ){
+        _warningTimer = [[NSTimer alloc] initWithFireDate:
+                            [NSDate dateWithTimeIntervalSinceNow:delay - configDelegate.warningBeepTime]
                                               interval:delay
                                                 target:self 
                                               selector:@selector(warn)
@@ -80,17 +78,17 @@
     // play tone
     [self playSoundFile:@"GB"];
     // show warning animation
-    [delegate startWarningWithDuration:warningBeepTime];
+    [eventDelegate startWarningWithDuration:configDelegate.warningBeepTime];
 }
 
 -(void)start{
     NSLog( @"started announcer" );
     // start with a warning
-    if( warningBeepTime > 0 ){
+    if( configDelegate.warningBeepTime > 0 ){
         [self warn];
     }
     // then follow-up with announcement
-    [NSTimer scheduledTimerWithTimeInterval:warningBeepTime
+    [NSTimer scheduledTimerWithTimeInterval:configDelegate.warningBeepTime
                                      target:self
                                    selector:@selector(announce)
                                    userInfo:nil

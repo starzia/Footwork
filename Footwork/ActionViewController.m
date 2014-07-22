@@ -20,8 +20,6 @@
 }
 
 @synthesize timeLabel;
-@synthesize badmintonMode;
-@synthesize announcementDelay;
 @synthesize marker1;
 @synthesize marker2;
 @synthesize marker3;
@@ -32,18 +30,9 @@
 @synthesize marker8;
 @synthesize numberLabel;
 @synthesize courtImage;
+@synthesize configDelegate;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // set default values
-        self.announcementDelay = 2.0;
-        self.badmintonMode = NO;
-    }
-    return self;
-}
 
 -(void)viewDidLoad{
     _markers = [NSArray arrayWithObjects:marker1, marker2, marker3,
@@ -58,10 +47,12 @@
     // clear badminton features, if disabled
     for( int i=0; i<_markers.count; i++ ){
         UILabel* marker = [_markers objectAtIndex:i];
-        marker.hidden = !(badmintonMode && self.announcer.numberRange >= i+1);
+        // show number if we're in badminton mode and that number is enabled
+        marker.hidden = !(configDelegate.badmintonMode
+                          && [configDelegate.numbersToDrawFrom containsObject:@(i+1)]);
     }
-    courtImage.hidden = !badmintonMode;
-    numberLabel.hidden = badmintonMode;
+    courtImage.hidden = !configDelegate.badmintonMode;
+    numberLabel.hidden = configDelegate.badmintonMode;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -84,7 +75,7 @@
     _clockTicks++;
 }
 
-#pragma mark - AnnouncerDelegate
+#pragma mark - AnnouncerEventDelegate
 
 -(void)startWarningWithDuration:(float)duration{
     // ramp up to a black mask, then go back to clear
@@ -113,20 +104,6 @@
     }
     // set number label (for generic mode)
     numberLabel.text = [NSString stringWithFormat:@"%d",number];
-}
-
--(float)delayForNumber:(int)number{
-    if( self.badmintonMode ){
-        if( number == 5 || number == 6 || number == 7 ){
-            return self.announcementDelay * 0.8;
-        }else if( number == 3 || number == 4 ){
-            return self.announcementDelay * 1.3;
-        }else{
-            return self.announcementDelay;
-        }
-    }else{
-        return self.announcementDelay;
-    }
 }
 
 

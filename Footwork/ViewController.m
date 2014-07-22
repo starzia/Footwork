@@ -61,6 +61,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     announcer = [[Announcer alloc] init];
+    announcer.configDelegate = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -115,13 +116,9 @@
     
     // create and setup new view controller
     ActionViewController* actionViewController = [[ActionViewController alloc] init];
-    announcer.delegate = actionViewController;
+    actionViewController.configDelegate = self;
+    announcer.eventDelegate = actionViewController;
     actionViewController.announcer = announcer;
-    actionViewController.badmintonMode = self.badmintonMode;
-    actionViewController.announcementDelay = [self rateSliderValue];
-    // configure the announcer
-    announcer.warningBeepTime = [self warningSliderValue];
-    announcer.numberRange = [self numberSliderValue];
     
     // present view controller
     [self.navigationController pushViewController:actionViewController animated:YES];
@@ -326,5 +323,38 @@
     // unselect
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - AnnouncerConfigDelegate
+
+-(float)delayForNumber:(int)number{
+    float baseDelay = [self rateSliderValue];
+    // when in badminton mode, alter base delay based on the distance to the number
+    if( self.badmintonMode ){
+        if( number == 5 || number == 6 || number == 7 ){
+            return baseDelay * 0.8;
+        }else if( number == 3 || number == 4 ){
+            return baseDelay * 1.3;
+        }else{
+            return baseDelay;
+        }
+    }else{
+        return baseDelay;
+    }
+}
+
+
+-(float)warningBeepTime{
+    return [self warningSliderValue];
+}
+
+
+-(NSArray*)numbersToDrawFrom{
+    NSMutableArray* numbers = [NSMutableArray array];
+    for( int i=0; i < [self numberSliderValue]; i++ ){
+        [numbers addObject:[NSNumber numberWithInt:i+1]];
+    }
+    return numbers;
+}
+
 @end
 

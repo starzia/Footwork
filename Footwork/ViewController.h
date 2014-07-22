@@ -12,8 +12,8 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UITableViewController <UIActionSheetDelegate,
-    MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : UITableViewController <AnnouncerConfigDelegate,
+    UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) Announcer* announcer;
 @property (strong) IBOutlet UISlider* rateSlider;
