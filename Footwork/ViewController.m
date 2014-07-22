@@ -283,7 +283,7 @@
 }
 
 
-- (NSIndexPath *)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // take the appropriate action
     if( indexPath.section == 0 ){
         if( indexPath.row == 0 ){
@@ -312,8 +312,6 @@
     
     // unselect
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    return indexPath; // approve selection
 }
 @end
 
