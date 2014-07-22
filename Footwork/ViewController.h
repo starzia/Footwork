@@ -33,6 +33,7 @@
 @property (strong) IBOutlet UITableViewCell* emailCell;
 @property (strong) IBOutlet UITableViewCell* recommendCell;
 @property (strong) IBOutlet UITableViewCell* reviewCell;
+@property (strong) IBOutlet UITableViewCell* configNumbersCell;
 
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 

@@ -26,6 +26,7 @@
 @synthesize startCell;
 @synthesize emailCell, websiteCell;
 @synthesize recommendCell, reviewCell;
+@synthesize configNumbersCell;
 
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
@@ -80,7 +81,8 @@
 }
 
 -(IBAction)modeChanged:(id)sender{
-    // no action required
+    // reload table to show/hide configNumbersCell
+    [self.tableView reloadData];
 }
 
 // throw up UIAlert and wait for a few seconds before really starting
@@ -239,9 +241,18 @@
         }
     }else if( indexPath.section == 2 ){
         if( indexPath.row == 0 ){
-            return numberCell;
-        }else{
             return modeCell;
+        }else if( indexPath.row == 1 ){
+            // in badminton mode, give the option to arrange numbers
+            if( self.badmintonMode ){
+                return configNumbersCell;
+            }
+            // in generic mode, simple give a choice of the quantity of numbers
+            else{
+                return numberCell;
+            }
+        }else{
+            return configNumbersCell;
         }
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
@@ -269,10 +280,12 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if( indexPath.section == 2 && indexPath.row == 1 ){ /* make toggle row larger */
+    if( indexPath.section == 2 && indexPath.row == 0 ){ /* make toggle row larger */
         return 100;
     }else if( indexPath.section == 0 && indexPath.row == 0 /* make the "start" row larger */ ){
         return 50;
+    }else if( indexPath.section == 2 && indexPath.row == 1 && self.badmintonMode ){ // make configNumbersCell row larger
+        return 87;
     }else return 40;
 }
 
