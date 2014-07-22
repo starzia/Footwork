@@ -326,13 +326,15 @@
 
 #pragma mark - AnnouncerConfigDelegate
 
--(float)delayForNumber:(int)number{
+-(float)delayForLabel:(int)label{
+    int location = [self locationOfLabel:[NSNumber numberWithInt:label]];
+    
     float baseDelay = [self rateSliderValue];
     // when in badminton mode, alter base delay based on the distance to the number
     if( self.badmintonMode ){
-        if( number == 5 || number == 6 || number == 7 ){
+        if( location == 1 || location == 3 || location == 5 ){
             return baseDelay * 0.8;
-        }else if( number == 3 || number == 4 ){
+        }else if( location == 6 || location == 8 ){
             return baseDelay * 1.3;
         }else{
             return baseDelay;
@@ -348,7 +350,7 @@
 }
 
 
--(NSArray*)numbersToDrawFrom{
+-(NSArray*)labelNumbersToDrawFrom{
     NSMutableArray* numbers = [NSMutableArray array];
     for( int i=0; i < [self numberSliderValue]; i++ ){
         [numbers addObject:[NSNumber numberWithInt:i+1]];
@@ -356,7 +358,7 @@
     return numbers;
 }
 
--(int)locationOfNumber:(NSNumber *)numberLabel{
+-(int)locationOfLabel:(NSNumber *)numberLabel{
     // TODO: for now, return a dummy value
     return numberLabel.intValue;
 }

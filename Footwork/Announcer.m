@@ -40,7 +40,7 @@
 
 /** return random number from configDelegate.numbersToDrawFrom */
 -(NSInteger)getRandom{
-    NSArray* numbers = configDelegate.numbersToDrawFrom;
+    NSArray* numbers = configDelegate.labelNumbersToDrawFrom;
     int randIdx = ( arc4random() % numbers.count );
     return ((NSNumber*)numbers[randIdx]).intValue;
 }
@@ -54,7 +54,7 @@
     if( eventDelegate ) [eventDelegate gotNumber:randomNum];
     
     // set up timers for next announcement
-    float delay = [configDelegate delayForNumber:randomNum];
+    float delay = [configDelegate delayForLabel:randomNum];
     _mainTimer = [NSTimer scheduledTimerWithTimeInterval:delay
                                                   target:self
                                                 selector:@selector(announce)

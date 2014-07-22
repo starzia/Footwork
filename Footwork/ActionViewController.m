@@ -52,12 +52,12 @@
     // show enabled markers, if in badminton mode
     if( configDelegate.badmintonMode ){
         // iterate through all enabled markers
-        for( NSNumber* number in configDelegate.numbersToDrawFrom ){
+        for( NSNumber* labelNumber in configDelegate.labelNumbersToDrawFrom ){
             // determine location corresponding to label
-            int markerIdx = [configDelegate locationOfNumber:number];
+            int markerIdx = [configDelegate locationOfLabel:labelNumber];
             UILabel* marker = [_markers objectAtIndex:markerIdx];
             // relabel marker and show it
-            marker.text = number.description;
+            marker.text = labelNumber.description;
             marker.hidden = NO;
         }
         courtImage.hidden = !configDelegate.badmintonMode;
@@ -98,23 +98,24 @@
                      }];
 }
 
--(void)gotNumber:(int)number{
+-(void)gotNumber:(int)labelNumber{
+    int locationNumber = [configDelegate locationOfLabel:[NSNumber numberWithInt:labelNumber]];
     
     // clear old marker
     for( UILabel* marker in _markers ){
         marker.backgroundColor = [UIColor clearColor];
     }
     // set new marker
-    if( number <= 8 ){
-        UILabel* marker = [_markers objectAtIndex:number];
-        if( number > 4 ){
+    if( locationNumber <= 8 ){
+        UILabel* marker = [_markers objectAtIndex:locationNumber];
+        if( locationNumber == 1 || locationNumber == 3 || locationNumber == 5 || locationNumber == 7 ){
             marker.backgroundColor = [UIColor orangeColor];
         }else{
             marker.backgroundColor = [UIColor redColor];
         }
     }
     // set number label (for generic mode)
-    numberLabel.text = [NSString stringWithFormat:@"%d",number];
+    numberLabel.text = [NSString stringWithFormat:@"%d",labelNumber];
 }
 
 

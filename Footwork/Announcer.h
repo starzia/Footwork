@@ -10,17 +10,17 @@
 @protocol AnnouncerConfigDelegate <NSObject>
 
 -(BOOL)badmintonMode;
-/** return the number of seconds to wait after announcing the given number */
--(float)delayForNumber:(int)number;
-/** set of NSNumbers to randomly draw from */
--(NSArray*)numbersToDrawFrom;
+/** set of NSNumber labels to randomly draw from */
+-(NSArray*)labelNumbersToDrawFrom;
+/** return the number of seconds to wait after announcing the given label */
+-(float)delayForLabel:(int)number;
 /** returns the court location for a given number label.
  court locations are:
  0 1 2
  3 4 5
  6 7 8
  */
--(int)locationOfNumber:(NSNumber*)numberLabel;
+-(int)locationOfLabel:(NSNumber*)numberLabel;
 /** seconds before the announcement at which time to make a warning beep.
  setting to zero disabled the warning beep. */
 -(float)warningBeepTime;
