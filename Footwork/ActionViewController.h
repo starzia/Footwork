@@ -14,6 +14,7 @@
 @property (strong) Announcer* announcer;
 @property (strong) IBOutlet UILabel* timeLabel;
 @property (strong) IBOutlet UILabel* numberLabel;
+@property (strong) IBOutlet UILabel* marker0;
 @property (strong) IBOutlet UILabel* marker1;
 @property (strong) IBOutlet UILabel* marker2;
 @property (strong) IBOutlet UILabel* marker3;

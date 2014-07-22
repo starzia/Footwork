@@ -356,5 +356,10 @@
     return numbers;
 }
 
+-(int)locationOfNumber:(NSNumber *)numberLabel{
+    // TODO: for now, return a dummy value
+    return numberLabel.intValue;
+}
+
 @end
 

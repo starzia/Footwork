@@ -14,6 +14,13 @@
 -(float)delayForNumber:(int)number;
 /** set of NSNumbers to randomly draw from */
 -(NSArray*)numbersToDrawFrom;
+/** returns the court location for a given number label.
+ court locations are:
+ 0 1 2
+ 3 4 5
+ 6 7 8
+ */
+-(int)locationOfNumber:(NSNumber*)numberLabel;
 /** seconds before the announcement at which time to make a warning beep.
  setting to zero disabled the warning beep. */
 -(float)warningBeepTime;

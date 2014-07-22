@@ -20,6 +20,7 @@
 }
 
 @synthesize timeLabel;
+@synthesize marker0;
 @synthesize marker1;
 @synthesize marker2;
 @synthesize marker3;
@@ -35,7 +36,7 @@
 
 
 -(void)viewDidLoad{
-    _markers = [NSArray arrayWithObjects:marker1, marker2, marker3,
+    _markers = [NSArray arrayWithObjects:marker0, marker1, marker2, marker3,
                 marker4, marker5, marker6, marker7, marker8, nil];
     // set up flash view
     _flash = [[UIView alloc] initWithFrame:self.view.frame];
@@ -44,14 +45,24 @@
     _flash.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_flash];
     
-    // clear badminton features, if disabled
-    for( int i=0; i<_markers.count; i++ ){
-        UILabel* marker = [_markers objectAtIndex:i];
-        // show number if we're in badminton mode and that number is enabled
-        marker.hidden = !(configDelegate.badmintonMode
-                          && [configDelegate.numbersToDrawFrom containsObject:@(i+1)]);
+    // hide all markers first
+    for( UILabel* marker in _markers ){
+        marker.hidden = YES;
     }
-    courtImage.hidden = !configDelegate.badmintonMode;
+    // show enabled markers, if in badminton mode
+    if( configDelegate.badmintonMode ){
+        // iterate through all enabled markers
+        for( NSNumber* number in configDelegate.numbersToDrawFrom ){
+            // determine location corresponding to label
+            int markerIdx = [configDelegate locationOfNumber:number];
+            UILabel* marker = [_markers objectAtIndex:markerIdx];
+            // relabel marker and show it
+            marker.text = number.description;
+            marker.hidden = NO;
+        }
+        courtImage.hidden = !configDelegate.badmintonMode;
+    }
+    
     numberLabel.hidden = configDelegate.badmintonMode;
 }
 
@@ -95,7 +106,7 @@
     }
     // set new marker
     if( number <= 8 ){
-        UILabel* marker = [_markers objectAtIndex:number-1];
+        UILabel* marker = [_markers objectAtIndex:number];
         if( number > 4 ){
             marker.backgroundColor = [UIColor orangeColor];
         }else{
