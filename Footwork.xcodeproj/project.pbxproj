@@ -52,6 +52,8 @@
 		AA79C4E9198008E700EBE9E6 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4E7198008E700EBE9E6 /* ConfigViewController.m */; };
 		AA79C4EA198008E700EBE9E6 /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */; };
 		AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */; };
+		AA79C4F11981779300EBE9E6 /* DefaultSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */; };
+		AA79C4F41981782900EBE9E6 /* SavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4F31981782900EBE9E6 /* SavedState.m */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -111,6 +113,9 @@
 		AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
 		AA79C4EB19800AA400EBE9E6 /* DraggableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableLabel.h; sourceTree = "<group>"; };
 		AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableLabel.m; sourceTree = "<group>"; };
+		AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultSettings.plist; sourceTree = "<group>"; };
+		AA79C4F21981782900EBE9E6 /* SavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedState.h; sourceTree = "<group>"; };
+		AA79C4F31981782900EBE9E6 /* SavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedState.m; sourceTree = "<group>"; };
 		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -184,6 +189,8 @@
 				AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */,
 				AA79C4EB19800AA400EBE9E6 /* DraggableLabel.h */,
 				AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */,
+				AA79C4F21981782900EBE9E6 /* SavedState.h */,
+				AA79C4F31981782900EBE9E6 /* SavedState.m */,
 			);
 			path = Footwork;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 				AA47BE9F1560964B00B76784 /* InfoPlist.strings */,
 				AA47BEA21560964B00B76784 /* main.m */,
 				AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */,
+				AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 				AA47BED21560A12F00B76784 /* 11.wav in Resources */,
 				AA47BED31560A12F00B76784 /* 12.wav in Resources */,
 				AA47BED41560A12F00B76784 /* 13.wav in Resources */,
+				AA79C4F11981779300EBE9E6 /* DefaultSettings.plist in Resources */,
 				AA47BED51560A12F00B76784 /* 14.wav in Resources */,
 				AA47BED61560A12F00B76784 /* 15.wav in Resources */,
 				AA47BED71560A12F00B76784 /* 16.wav in Resources */,
@@ -344,6 +353,7 @@
 				AA47BEA31560964B00B76784 /* main.m in Sources */,
 				AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */,
 				AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */,
+				AA79C4F41981782900EBE9E6 /* SavedState.m in Sources */,
 				AA47BEAA1560964B00B76784 /* ViewController.m in Sources */,
 				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
 				AA79C4E9198008E700EBE9E6 /* ConfigViewController.m in Sources */,

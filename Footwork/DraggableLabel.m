@@ -68,7 +68,7 @@
 {
     CGPoint newPosition;
     // TODO
-    // for now, arbitrarily reject drag if it was for less than 50 points
+    // for now, arbitrarily reject drag if it spanned less than 50 points
     CGFloat threshold = 50;
     CGPoint touchPos = [touches.anyObject locationInView:self.superview];
     if( abs(touchPos.x - _originalPosition.x) >= threshold
