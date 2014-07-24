@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "RootViewController.h"
 
 @implementation AppDelegate
 
@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     // create navigation controller for root view
-    ViewController* optionsView = [[ViewController alloc]
+    RootViewController* optionsView = [[RootViewController alloc]
                                    initWithStyle:UITableViewStyleGrouped];
     UINavigationController* navCtrl = [[UINavigationController alloc]
                                        initWithRootViewController:optionsView];

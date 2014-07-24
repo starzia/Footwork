@@ -5,18 +5,18 @@
 //  Created by Stephen Tarzia on 5/13/12.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "ActionViewController.h"
 #import "ConfigViewController.h"
 
-@interface ViewController (){
+@interface RootViewController (){
     UINavigationItem* _navItem;
     UIAlertView* _waitAlert;
 }
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 @synthesize announcer;
 @synthesize rateSlider, rateSliderLabel;
 @synthesize warningSlider, warningSliderLabel;

@@ -12,7 +12,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UITableViewController <AnnouncerConfigDelegate,
+@interface RootViewController : UITableViewController <AnnouncerConfigDelegate,
     UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) Announcer* announcer;

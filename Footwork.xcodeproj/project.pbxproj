@@ -14,8 +14,8 @@
 		AA47BEA11560964B00B76784 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA47BE9F1560964B00B76784 /* InfoPlist.strings */; };
 		AA47BEA31560964B00B76784 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA21560964B00B76784 /* main.m */; };
 		AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA61560964B00B76784 /* AppDelegate.m */; };
-		AA47BEAA1560964B00B76784 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA91560964B00B76784 /* ViewController.m */; };
-		AA47BEAD1560964B00B76784 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEAB1560964B00B76784 /* ViewController.xib */; };
+		AA47BEAA1560964B00B76784 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEA91560964B00B76784 /* RootViewController.m */; };
+		AA47BEAD1560964B00B76784 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEAB1560964B00B76784 /* RootViewController.xib */; };
 		AA47BEB91560980B00B76784 /* Announcer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47BEB81560980B00B76784 /* Announcer.m */; };
 		AA47BECF1560A12F00B76784 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBB1560A12F00B76784 /* 0.wav */; };
 		AA47BED01560A12F00B76784 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = AA47BEBC1560A12F00B76784 /* 1.wav */; };
@@ -71,9 +71,9 @@
 		AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Footwork-Prefix.pch"; sourceTree = "<group>"; };
 		AA47BEA51560964B00B76784 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA47BEA61560964B00B76784 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AA47BEA81560964B00B76784 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AA47BEA91560964B00B76784 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AA47BEAC1560964B00B76784 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		AA47BEA81560964B00B76784 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		AA47BEA91560964B00B76784 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		AA47BEAC1560964B00B76784 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		AA47BEB71560980B00B76784 /* Announcer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcer.h; sourceTree = "<group>"; };
 		AA47BEB81560980B00B76784 /* Announcer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Announcer.m; sourceTree = "<group>"; };
 		AA47BEBB1560A12F00B76784 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
@@ -175,9 +175,9 @@
 				AA47BEBA1560A12F00B76784 /* digits */,
 				AA47BEA51560964B00B76784 /* AppDelegate.h */,
 				AA47BEA61560964B00B76784 /* AppDelegate.m */,
-				AA47BEA81560964B00B76784 /* ViewController.h */,
-				AA47BEA91560964B00B76784 /* ViewController.m */,
-				AA47BEAB1560964B00B76784 /* ViewController.xib */,
+				AA47BEA81560964B00B76784 /* RootViewController.h */,
+				AA47BEA91560964B00B76784 /* RootViewController.m */,
+				AA47BEAB1560964B00B76784 /* RootViewController.xib */,
 				AA47BE9D1560964B00B76784 /* Supporting Files */,
 				AA47BEB71560980B00B76784 /* Announcer.h */,
 				AA47BEB81560980B00B76784 /* Announcer.m */,
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA47BEA11560964B00B76784 /* InfoPlist.strings in Resources */,
-				AA47BEAD1560964B00B76784 /* ViewController.xib in Resources */,
+				AA47BEAD1560964B00B76784 /* RootViewController.xib in Resources */,
 				AA79C4EA198008E700EBE9E6 /* ConfigViewController.xib in Resources */,
 				AA47BECF1560A12F00B76784 /* 0.wav in Resources */,
 				AA47BED01560A12F00B76784 /* 1.wav in Resources */,
@@ -354,7 +354,7 @@
 				AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */,
 				AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */,
 				AA79C4F41981782900EBE9E6 /* SavedState.m in Sources */,
-				AA47BEAA1560964B00B76784 /* ViewController.m in Sources */,
+				AA47BEAA1560964B00B76784 /* RootViewController.m in Sources */,
 				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
 				AA79C4E9198008E700EBE9E6 /* ConfigViewController.m in Sources */,
 				AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */,
@@ -372,12 +372,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AA47BEAB1560964B00B76784 /* ViewController.xib */ = {
+		AA47BEAB1560964B00B76784 /* RootViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AA47BEAC1560964B00B76784 /* en */,
 			);
-			name = ViewController.xib;
+			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
