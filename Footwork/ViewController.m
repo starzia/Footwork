@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "ActionViewController.h"
+#import "ConfigViewController.h"
 
 @interface ViewController (){
     UINavigationItem* _navItem;
@@ -289,7 +290,8 @@
 #pragma mark - UITableViewDelegate
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
-    return ( indexPath.section == 0 || indexPath.section == 3 );
+    return ( indexPath.section == 0 || indexPath.section == 3
+            || (indexPath.section == 2 && indexPath.row == 1));
 }
 
 
@@ -303,6 +305,14 @@
             // instructions
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]];
         }
+    }else if( indexPath.section == 2 ){
+        if( indexPath.row == 1 ){
+            // customize numbers
+            ConfigViewController* configViewController = [ConfigViewController new];
+            [self.navigationController pushViewController:configViewController
+                                                 animated:YES];
+        }
+    
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
             // email friend
@@ -351,6 +361,7 @@
 
 
 -(NSArray*)labelNumbersToDrawFrom{
+    // TODO: for now, return all values up the the slider value
     NSMutableArray* numbers = [NSMutableArray array];
     for( int i=0; i < [self numberSliderValue]; i++ ){
         [numbers addObject:[NSNumber numberWithInt:i+1]];

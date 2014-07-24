@@ -49,6 +49,9 @@
 		AA64E830168E7ADE0062D795 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E82F168E7ADE0062D795 /* Default-Landscape@2x~ipad.png */; };
 		AA64E832168E7AE30062D795 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E831168E7AE30062D795 /* Default-Portrait@2x~ipad.png */; };
 		AA64E834168E82F10062D795 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AA64E833168E82F10062D795 /* icon-72.png */; };
+		AA79C4E9198008E700EBE9E6 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4E7198008E700EBE9E6 /* ConfigViewController.m */; };
+		AA79C4EA198008E700EBE9E6 /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */; };
+		AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -103,6 +106,11 @@
 		AA64E82F168E7ADE0062D795 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		AA64E831168E7AE30062D795 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		AA64E833168E82F10062D795 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		AA79C4E6198008E700EBE9E6 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		AA79C4E7198008E700EBE9E6 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
+		AA79C4EB19800AA400EBE9E6 /* DraggableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableLabel.h; sourceTree = "<group>"; };
+		AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableLabel.m; sourceTree = "<group>"; };
 		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -171,6 +179,11 @@
 				AABAB09E16828A7A00F5CC31 /* ActionViewController.h */,
 				AABAB09F16828A7A00F5CC31 /* ActionViewController.m */,
 				AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */,
+				AA79C4E6198008E700EBE9E6 /* ConfigViewController.h */,
+				AA79C4E7198008E700EBE9E6 /* ConfigViewController.m */,
+				AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */,
+				AA79C4EB19800AA400EBE9E6 /* DraggableLabel.h */,
+				AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */,
 			);
 			path = Footwork;
 			sourceTree = "<group>";
@@ -284,6 +297,7 @@
 			files = (
 				AA47BEA11560964B00B76784 /* InfoPlist.strings in Resources */,
 				AA47BEAD1560964B00B76784 /* ViewController.xib in Resources */,
+				AA79C4EA198008E700EBE9E6 /* ConfigViewController.xib in Resources */,
 				AA47BECF1560A12F00B76784 /* 0.wav in Resources */,
 				AA47BED01560A12F00B76784 /* 1.wav in Resources */,
 				AA47BED11560A12F00B76784 /* 10.wav in Resources */,
@@ -329,8 +343,10 @@
 			files = (
 				AA47BEA31560964B00B76784 /* main.m in Sources */,
 				AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */,
+				AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */,
 				AA47BEAA1560964B00B76784 /* ViewController.m in Sources */,
 				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
+				AA79C4E9198008E700EBE9E6 /* ConfigViewController.m in Sources */,
 				AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -413,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
