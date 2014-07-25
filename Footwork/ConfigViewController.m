@@ -11,7 +11,19 @@
 
 @implementation ConfigViewController{
     NSArray* _markers;
+    NSArray* _targets;
 }
+
+@synthesize target0;
+@synthesize target1;
+@synthesize target2;
+@synthesize target3;
+@synthesize target4;
+@synthesize target5;
+@synthesize target6;
+@synthesize target7;
+@synthesize target8;
+@synthesize holdingArea;
 
 @synthesize marker1;
 @synthesize marker2;
@@ -27,6 +39,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _targets = [NSArray arrayWithObjects:target0, target1, target2, target3,
+                target4, target5, target6, target7, target8, nil];
     
     _markers = [NSArray arrayWithObjects:marker1, marker2, marker3,
            marker4, marker5, marker6, marker7, marker8, marker9, nil];

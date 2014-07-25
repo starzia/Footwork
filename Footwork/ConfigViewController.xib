@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfigViewController">
             <connections>
+                <outlet property="holdingArea" destination="X0g-r6-Ly5" id="6tc-UU-KgA"/>
                 <outlet property="marker1" destination="faH-Gd-USc" id="hNE-PE-OId"/>
                 <outlet property="marker2" destination="1JA-hg-2MQ" id="Suv-0b-ckF"/>
                 <outlet property="marker3" destination="0db-d0-9Dr" id="BbB-RV-RQd"/>
@@ -16,6 +17,15 @@
                 <outlet property="marker7" destination="jAQ-a0-SRa" id="itu-fn-Dkx"/>
                 <outlet property="marker8" destination="TRb-S6-giF" id="Q3W-1i-HjO"/>
                 <outlet property="marker9" destination="Nte-cP-SYG" id="h2y-Ym-ITz"/>
+                <outlet property="target0" destination="q7k-Cc-PBP" id="YrK-E7-IcD"/>
+                <outlet property="target1" destination="l0v-K6-3wE" id="Anf-fb-uFH"/>
+                <outlet property="target2" destination="hd6-XQ-qNc" id="SCL-gG-K3N"/>
+                <outlet property="target3" destination="mUP-9L-l7c" id="QiU-4C-d5B"/>
+                <outlet property="target4" destination="RiE-lW-Qly" id="mZN-wr-80V"/>
+                <outlet property="target5" destination="em4-Hc-OhH" id="Tlf-GK-jeL"/>
+                <outlet property="target6" destination="Daq-uU-aAr" id="U5n-0S-9L9"/>
+                <outlet property="target7" destination="DsQ-vM-j0v" id="B2U-oa-5qN"/>
+                <outlet property="target8" destination="V5r-9m-UOT" id="GlS-TZ-zAg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,6 +53,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                 </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="mUP-9L-l7c">
+                    <rect key="frame" x="20" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="RiE-lW-Qly">
+                    <rect key="frame" x="134" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="em4-Hc-OhH">
+                    <rect key="frame" x="247" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
                 <view alpha="0.69999999999999973" contentMode="scaleToFill" id="Daq-uU-aAr">
                     <rect key="frame" x="20" y="320" width="53" height="61"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,18 +83,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="mUP-9L-l7c">
-                    <rect key="frame" x="20" y="211" width="53" height="61"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
-                </view>
-                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="RiE-lW-Qly">
-                    <rect key="frame" x="134" y="211" width="53" height="61"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
-                </view>
-                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="em4-Hc-OhH">
-                    <rect key="frame" x="247" y="211" width="53" height="61"/>
+                <view alpha="0.69999998807907104" contentMode="scaleToFill" id="X0g-r6-Ly5">
+                    <rect key="frame" x="-5" y="397" width="325" height="171"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                 </view>
