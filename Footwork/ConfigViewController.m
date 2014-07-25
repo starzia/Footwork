@@ -109,6 +109,11 @@ CGFloat viewDistance( UIView* a, UIView* b ){
             }
         }
     }
+    // if no locations are being saved, then reset to default locations by
+    // removing the locationLabels record
+    if( locationLabels.count == 0 ){
+        locationLabels = nil;
+    }
     // save dict
     [FootworkSavedState setObject:locationLabels
                            forKey:kDefaultLocationLabels];
