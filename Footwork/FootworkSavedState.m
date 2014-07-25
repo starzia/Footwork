@@ -15,5 +15,6 @@ NSString* const kDefaultRateSlider = @"rateSlider";
 NSString* const kDefaultWarningSlider = @"warningSlider";
 NSString* const kDefaultNumberSlider = @"numberSlider";
 NSString* const kDefaultSelectedModeIndex = @"selectedModeIndex";
+NSString* const kDefaultLocationLabels = @"locationLabels";
 
 @end

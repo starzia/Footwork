@@ -382,17 +382,19 @@
 
 
 -(NSArray*)labelNumbersToDrawFrom{
-    // TODO: for now, return all values up the the slider value
+    NSDictionary* labelsDict = [FootworkSavedState objectForKey:kDefaultLocationLabels];
+    // plist dicts must have NSString keys, so we convert to NSNumbers here
     NSMutableArray* numbers = [NSMutableArray array];
-    for( int i=0; i < [self numberSliderValue]; i++ ){
-        [numbers addObject:[NSNumber numberWithInt:i+1]];
+    for( NSString* numString in labelsDict.allKeys ){
+        [numbers addObject:[NSNumber numberWithInt:[numString intValue]]];
     }
     return numbers;
 }
 
 -(int)locationOfLabel:(NSNumber *)numberLabel{
-    // TODO: for now, return a dummy value
-    return numberLabel.intValue;
+    NSDictionary* labelsDict = [FootworkSavedState objectForKey:kDefaultLocationLabels];
+    NSNumber* locNum = labelsDict[numberLabel.description]; // remember, that labelsDict is keyed with number strings
+    return locNum.intValue;
 }
 
 @end

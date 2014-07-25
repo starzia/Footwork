@@ -10,5 +10,20 @@
 	<real>0.6</real>
 	<key>rateSlider</key>
 	<real>3</real>
+	<key>locationLabels</key>
+	<dict>
+		<key>1</key>
+		<integer>0</integer>
+		<key>2</key>
+		<integer>2</integer>
+		<key>3</key>
+		<integer>6</integer>
+		<key>4</key>
+		<integer>8</integer>
+		<key>5</key>
+		<integer>3</integer>
+		<key>6</key>
+		<integer>5</integer>
+	</dict>
 </dict>
 </plist>
