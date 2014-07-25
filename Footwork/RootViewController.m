@@ -30,6 +30,16 @@
 @synthesize recommendCell, reviewCell;
 @synthesize configNumbersCell;
 
+@synthesize marker0;
+@synthesize marker1;
+@synthesize marker2;
+@synthesize marker3;
+@synthesize marker4;
+@synthesize marker5;
+@synthesize marker6;
+@synthesize marker7;
+@synthesize marker8;
+
 
 - (void)viewDidLoad
 {
@@ -64,6 +74,24 @@
 -(void)viewWillAppear:(BOOL)animated{
     // stop announcer when returning to this view
     [announcer stop];
+    // arrange numbers on configNumbersCell
+    {
+        NSArray* markers = [NSArray arrayWithObjects:marker0, marker1, marker2, marker3,
+                                        marker4, marker5, marker6, marker7, marker8, nil];
+        // hide all markers first
+        for( UILabel* marker in markers ){
+            marker.hidden = YES;
+        }
+        // iterate through all enabled markers
+        for( NSNumber* labelNumber in self.labelNumbersToDrawFrom ){
+            // determine location corresponding to label
+            int markerIdx = [self locationOfLabel:labelNumber];
+            UILabel* marker = [markers objectAtIndex:markerIdx];
+            // relabel marker and show it
+            marker.text = labelNumber.description;
+            marker.hidden = NO;
+        }
+    }
 }
 
 -(UINavigationItem*)navigationItem{

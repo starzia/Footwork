@@ -37,6 +37,15 @@
 
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 
+@property (strong) IBOutlet UILabel* marker0;
+@property (strong) IBOutlet UILabel* marker1;
+@property (strong) IBOutlet UILabel* marker2;
+@property (strong) IBOutlet UILabel* marker3;
+@property (strong) IBOutlet UILabel* marker4;
+@property (strong) IBOutlet UILabel* marker5;
+@property (strong) IBOutlet UILabel* marker6;
+@property (strong) IBOutlet UILabel* marker7;
+@property (strong) IBOutlet UILabel* marker8;
 
 -(IBAction)rateSliderChanged:(id)sender;
 -(IBAction)warningSliderChanged:(id)sender;
