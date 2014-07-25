@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1072" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfigViewController">
             <connections>
+                <outlet property="marker1" destination="faH-Gd-USc" id="hNE-PE-OId"/>
+                <outlet property="marker2" destination="1JA-hg-2MQ" id="Suv-0b-ckF"/>
+                <outlet property="marker3" destination="0db-d0-9Dr" id="BbB-RV-RQd"/>
+                <outlet property="marker4" destination="15O-dw-EIl" id="QPJ-C5-lFc"/>
+                <outlet property="marker5" destination="BIS-Oz-laa" id="w8g-ra-J4I"/>
+                <outlet property="marker6" destination="RJh-bp-hOQ" id="R5Q-Pg-gPq"/>
+                <outlet property="marker7" destination="jAQ-a0-SRa" id="itu-fn-Dkx"/>
+                <outlet property="marker8" destination="TRb-S6-giF" id="Q3W-1i-HjO"/>
+                <outlet property="marker9" destination="Nte-cP-SYG" id="h2y-Ym-ITz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,14 +28,101 @@
                     <rect key="frame" x="0.0" y="65" width="320" height="354"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="q7k-Cc-PBP">
+                    <rect key="frame" x="20" y="87" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="l0v-K6-3wE">
+                    <rect key="frame" x="134" y="87" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="hd6-XQ-qNc">
+                    <rect key="frame" x="247" y="87" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="Daq-uU-aAr">
+                    <rect key="frame" x="20" y="320" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="DsQ-vM-j0v">
+                    <rect key="frame" x="134" y="320" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="V5r-9m-UOT">
+                    <rect key="frame" x="247" y="320" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="mUP-9L-l7c">
+                    <rect key="frame" x="20" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="RiE-lW-Qly">
+                    <rect key="frame" x="134" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view alpha="0.69999999999999973" contentMode="scaleToFill" id="em4-Hc-OhH">
+                    <rect key="frame" x="247" y="211" width="53" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
+                </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="faH-Gd-USc" customClass="DraggableLabel">
-                    <rect key="frame" x="20" y="89" width="28" height="50"/>
+                    <rect key="frame" x="20" y="409" width="40" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="37"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1JA-hg-2MQ" customClass="DraggableLabel">
-                    <rect key="frame" x="93" y="148" width="28" height="50"/>
+                    <rect key="frame" x="78" y="409" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0db-d0-9Dr" customClass="DraggableLabel">
+                    <rect key="frame" x="140" y="409" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15O-dw-EIl" customClass="DraggableLabel">
+                    <rect key="frame" x="203" y="409" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BIS-Oz-laa" customClass="DraggableLabel">
+                    <rect key="frame" x="260" y="409" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RJh-bp-hOQ" customClass="DraggableLabel">
+                    <rect key="frame" x="50" y="473" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jAQ-a0-SRa" customClass="DraggableLabel">
+                    <rect key="frame" x="110" y="473" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TRb-S6-giF" customClass="DraggableLabel">
+                    <rect key="frame" x="172" y="473" width="40" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nte-cP-SYG" customClass="DraggableLabel">
+                    <rect key="frame" x="230" y="473" width="40" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="37"/>
                     <nil key="highlightedColor"/>

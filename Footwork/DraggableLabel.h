@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class DraggableLabel; // forward declaration
+
+
+@protocol DraggingDelegate <NSObject>
+
+/** return YES if the label is in a valid position 
+    (otherwise the label will be snapped back to its prior position). */
+-(BOOL)currentPositionIsValidFor:(DraggableLabel*)label;
+
+@end
+
+
 @interface DraggableLabel : UILabel
 
 @property (readonly,strong) NSNumber* number;
+@property (assign) id<DraggingDelegate> delegate;
 
 @end

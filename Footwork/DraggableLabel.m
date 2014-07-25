@@ -67,12 +67,9 @@
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint newPosition;
-    // TODO
-    // for now, arbitrarily reject drag if it spanned less than 50 points
-    CGFloat threshold = 50;
+    // ask delegate whether new position is valid
     CGPoint touchPos = [touches.anyObject locationInView:self.superview];
-    if( abs(touchPos.x - _originalPosition.x) >= threshold
-       && abs(touchPos.y - _originalPosition.y) >= threshold ){
+    if( [self.delegate currentPositionIsValidFor:self] ){
         // accept new position
         newPosition = touchPos;
     }else{
