@@ -10,29 +10,32 @@
 
 @implementation SavedState
 
-SavedState* _globalSharedSavedState;
+BOOL _isInitialized = NO;
 
-// hidden, shared singleton instance
-+(SavedState*)sharedState{
-    // initialize the singleton if it has not been used yet
-    if( !_globalSharedSavedState ){
+
+// global initialization
++(void)init{
+    // if we haven't already initialized
+    if( !_isInitialized ){
         // load the defaults
         NSURL *defaultPrefsFile = [[NSBundle mainBundle]
                                    URLForResource:@"DefaultSettings" withExtension:@"plist"];
         NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+        _isInitialized = YES;
     }
-    return _globalSharedSavedState;
 }
 
 
--(NSObject*) objectForKey:(NSString*)key{
++(NSObject*) objectForKey:(NSString*)key{
+    [SavedState init];
     // pass through to NSUserDefaults
     return [[NSUserDefaults standardUserDefaults] objectForKey:key];
 }
 
 
--(void) setObject:(NSObject*)obj forKey:(NSString*)key{
++(void) setObject:(NSObject*)obj forKey:(NSString*)key{
+    [SavedState init];
     // are we removing an object rather than setting a value?
     if( !obj ){
         [self removeObjectForKey:key];
@@ -40,11 +43,16 @@ SavedState* _globalSharedSavedState;
     }
     // set object
     [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
+    // save changes
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
--(void) removeObjectForKey:(NSString*)key{
++(void) removeObjectForKey:(NSString*)key{
+    [SavedState init];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    // save changes
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

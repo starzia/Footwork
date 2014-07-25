@@ -10,9 +10,9 @@
 
 @interface SavedState : NSObject
 
--(NSObject*) objectForKey:(NSString*)key;
++(id) objectForKey:(NSString*)key;
 /** if obj==nil then we treat this as a removeObject:forKey: call */
--(void) setObject:(NSObject*)obj forKey:(NSString*)key;
--(void) removeObjectForKey:(NSString*)key;
++(void) setObject:(NSObject*)obj forKey:(NSString*)key;
++(void) removeObjectForKey:(NSString*)key;
 
 @end

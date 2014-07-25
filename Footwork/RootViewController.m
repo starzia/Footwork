@@ -8,6 +8,7 @@
 #import "RootViewController.h"
 #import "ActionViewController.h"
 #import "ConfigViewController.h"
+#import "FootworkSavedState.h"
 
 @interface RootViewController (){
     UINavigationItem* _navItem;
@@ -29,33 +30,6 @@
 @synthesize recommendCell, reviewCell;
 @synthesize configNumbersCell;
 
--(id)initWithStyle:(UITableViewStyle)style{
-    self = [super initWithStyle:style];
-    if( self ){
-        // initialize controls
-        rateSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
-        rateSlider.minimumValue = 1;
-        rateSlider.maximumValue = 5;
-        rateSlider.value = 3;
-        rateSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-        
-        warningSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
-        warningSlider.minimumValue = 0;
-        warningSlider.maximumValue = 2;
-        warningSlider.value = .6;
-        warningSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-        
-        numberSlider = [[UISlider alloc] initWithFrame:CGRectMake(0,0,100,30)];
-        numberSlider.minimumValue = 1;
-        numberSlider.maximumValue = 10;
-        numberSlider.value = 6;
-        numberSliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-        
-        modeControl = [[UISegmentedControl alloc] initWithItems:@[@"Generic", @"Badminton"]];
-        modeControl.selectedSegmentIndex = 1;
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -63,6 +37,28 @@
 	// Do any additional setup after loading the view, typically from a nib.
     announcer = [[Announcer alloc] init];
     announcer.configDelegate = self;
+    
+    // load defaults
+    { // - rateSlider
+        NSNumber* savedRateSliderVal = [FootworkSavedState objectForKey:kDefaultRateSlider];
+        rateSlider.value = savedRateSliderVal.floatValue;
+        [self rateSliderChanged:nil];
+    }
+    { // - warningSlider
+        NSNumber* savedWarningSliderVal = [FootworkSavedState objectForKey:kDefaultWarningSlider];
+        warningSlider.value = savedWarningSliderVal.floatValue;
+        [self warningSliderChanged:nil];
+    }
+    { // - numberSlider
+        NSNumber* savedNumberSliderVal = [FootworkSavedState objectForKey:kDefaultNumberSlider];
+        numberSlider.value = savedNumberSliderVal.floatValue;
+        [self numberSliderChanged:nil];
+    }
+    { // - modeControl
+        NSNumber* savedModeControlVal = [FootworkSavedState objectForKey:kDefaultSelectedModeIndex];
+        modeControl.selectedSegmentIndex = savedModeControlVal.intValue;
+        [self modeChanged:nil];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -85,6 +81,11 @@
 -(IBAction)modeChanged:(id)sender{
     // reload table to show/hide configNumbersCell
     [self.tableView reloadData];
+    // save new value (but only if this was called by a GUI event, not by viewDidLoad
+    if( sender ){
+        [FootworkSavedState setObject:[NSNumber numberWithInteger:modeControl.selectedSegmentIndex]
+                               forKey:kDefaultSelectedModeIndex];
+    }
 }
 
 // throw up UIAlert and wait for a few seconds before really starting
@@ -146,18 +147,38 @@
 }
 
 -(IBAction)rateSliderChanged:(id)sender{
+    // update text label in GUI
     rateSliderLabel.text = [NSString stringWithFormat:@"%.1f",[self rateSliderValue]];
+    // save new value (but only if this was called by a GUI event, not by viewDidLoad
+    if( sender ){
+        [FootworkSavedState setObject:[NSNumber numberWithFloat:rateSlider.value]
+                               forKey:kDefaultRateSlider];
+    }
 }
+
 -(IBAction)warningSliderChanged:(id)sender{
     float val = [self warningSliderValue];
+    // update text label in GUI
     if( val == 0.0 ){
         warningSliderLabel.text = @"none";
     }else{
         warningSliderLabel.text = [NSString stringWithFormat:@"%.1f",val];
     }
+    // save new value (but only if this was called by a GUI event, not by viewDidLoad
+    if( sender ){
+        [FootworkSavedState setObject:[NSNumber numberWithFloat:val]
+                               forKey:kDefaultWarningSlider];
+    }
 }
+
 -(IBAction)numberSliderChanged:(id)sender{
+    // update text label in GUI
     numberSliderLabel.text = [NSString stringWithFormat:@"%d",[self numberSliderValue]];
+    // save new value (but only if this was called by a GUI event, not by viewDidLoad
+    if( sender ){
+        [FootworkSavedState setObject:[NSNumber numberWithFloat:numberSlider.value]
+                               forKey:kDefaultNumberSlider];
+    }
 }
 
 -(void)emailFailed{

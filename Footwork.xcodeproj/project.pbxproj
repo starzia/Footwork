@@ -54,6 +54,7 @@
 		AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */; };
 		AA79C4F11981779300EBE9E6 /* DefaultSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */; };
 		AA79C4F41981782900EBE9E6 /* SavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C4F31981782900EBE9E6 /* SavedState.m */; };
+		AA956FF01982EABA007FA082 /* FootworkSavedState.m in Sources */ = {isa = PBXBuildFile; fileRef = AA956FEF1982EABA007FA082 /* FootworkSavedState.m */; };
 		AA9F5231156C797100E6F114 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9F5230156C797100E6F114 /* icon.png */; };
 		AABAB0A116828A7A00F5CC31 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABAB09F16828A7A00F5CC31 /* ActionViewController.m */; };
 		AABAB0A216828A7A00F5CC31 /* ActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABAB0A016828A7A00F5CC31 /* ActionViewController.xib */; };
@@ -116,6 +117,8 @@
 		AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultSettings.plist; sourceTree = "<group>"; };
 		AA79C4F21981782900EBE9E6 /* SavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedState.h; sourceTree = "<group>"; };
 		AA79C4F31981782900EBE9E6 /* SavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedState.m; sourceTree = "<group>"; };
+		AA956FEE1982EABA007FA082 /* FootworkSavedState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootworkSavedState.h; sourceTree = "<group>"; };
+		AA956FEF1982EABA007FA082 /* FootworkSavedState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootworkSavedState.m; sourceTree = "<group>"; };
 		AA9F5230156C797100E6F114 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		AABAB09E16828A7A00F5CC31 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		AABAB09F16828A7A00F5CC31 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 		AA47BE9C1560964B00B76784 /* Footwork */ = {
 			isa = PBXGroup;
 			children = (
+				AA956FF11982EAC1007FA082 /* SavedState */,
 				AA64E80F168E38C40062D795 /* images */,
 				AA47BEBA1560A12F00B76784 /* digits */,
 				AA47BEA51560964B00B76784 /* AppDelegate.h */,
@@ -189,8 +193,6 @@
 				AA79C4E8198008E700EBE9E6 /* ConfigViewController.xib */,
 				AA79C4EB19800AA400EBE9E6 /* DraggableLabel.h */,
 				AA79C4EC19800AA400EBE9E6 /* DraggableLabel.m */,
-				AA79C4F21981782900EBE9E6 /* SavedState.h */,
-				AA79C4F31981782900EBE9E6 /* SavedState.m */,
 			);
 			path = Footwork;
 			sourceTree = "<group>";
@@ -202,7 +204,6 @@
 				AA47BE9F1560964B00B76784 /* InfoPlist.strings */,
 				AA47BEA21560964B00B76784 /* main.m */,
 				AA47BEA41560964B00B76784 /* Footwork-Prefix.pch */,
-				AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -250,6 +251,18 @@
 				AA64E80D168E0C400062D795 /* icon_large.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		AA956FF11982EAC1007FA082 /* SavedState */ = {
+			isa = PBXGroup;
+			children = (
+				AA79C4F01981779300EBE9E6 /* DefaultSettings.plist */,
+				AA79C4F21981782900EBE9E6 /* SavedState.h */,
+				AA79C4F31981782900EBE9E6 /* SavedState.m */,
+				AA956FEE1982EABA007FA082 /* FootworkSavedState.h */,
+				AA956FEF1982EABA007FA082 /* FootworkSavedState.m */,
+			);
+			name = SavedState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +366,7 @@
 				AA47BEA31560964B00B76784 /* main.m in Sources */,
 				AA47BEA71560964B00B76784 /* AppDelegate.m in Sources */,
 				AA79C4ED19800AA400EBE9E6 /* DraggableLabel.m in Sources */,
+				AA956FF01982EABA007FA082 /* FootworkSavedState.m in Sources */,
 				AA79C4F41981782900EBE9E6 /* SavedState.m in Sources */,
 				AA47BEAA1560964B00B76784 /* RootViewController.m in Sources */,
 				AA47BEB91560980B00B76784 /* Announcer.m in Sources */,
