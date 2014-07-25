@@ -59,6 +59,9 @@ CGFloat viewDistance( UIView* a, UIView* b ){
     for( DraggableLabel* marker in _markers ){
         marker.delegate = self;
     }
+    
+    // load saved positions
+    [self loadPositions];
 }
 
 
@@ -68,6 +71,22 @@ CGFloat viewDistance( UIView* a, UIView* b ){
 
 -(BOOL)isMarker:(DraggableLabel*)marker inTarget:(UIView*)target{
     return viewDistance( marker, target ) < 20;
+}
+
+
+// load the saved positions from disk
+-(void)loadPositions{
+    NSDictionary* locationLabels = [FootworkSavedState objectForKey:kDefaultLocationLabels];
+    // go though each label, placing in the appropriate target
+    for( NSString* numberStr in locationLabels.allKeys ){
+        // get appropriate marker
+        DraggableLabel* marker = _markers[numberStr.intValue - 1];
+        // get appropriate target
+        int loc = ((NSNumber*)locationLabels[numberStr]).intValue;
+        UIView* target = _targets[loc];
+        // place market on top of target
+        marker.center = target.center;
+    }
 }
 
 
