@@ -7,6 +7,7 @@
 //
 
 #import "ConfigViewController.h"
+#import "FootworkSavedState.h"
 
 
 @implementation ConfigViewController{
@@ -61,21 +62,61 @@ CGFloat viewDistance( UIView* a, UIView* b ){
 }
 
 
+-(BOOL)isInHoldingArea:(DraggableLabel*)marker{
+    return marker.frame.origin.y > holdingArea.frame.origin.y;
+}
+
+-(BOOL)isMarker:(DraggableLabel*)marker inTarget:(UIView*)target{
+    return viewDistance( marker, target ) < 20;
+}
+
+
+// save the label positions to disk
+-(void)savePositions{
+    NSMutableDictionary* locationLabels = [NSMutableDictionary dictionary];
+    // go through each marker
+    for( DraggableLabel* marker in _markers ){
+        // ignore markers in the holding area
+        if( [self isInHoldingArea:marker] ){
+            continue;
+        }
+        // determine which target the market is in
+        for( int i = 0; i<_targets.count; i++ ){
+            if( [self isMarker:marker inTarget:_targets[i]] ){
+                // save this association
+                [locationLabels setObject:[NSNumber numberWithInt:i]
+                                   forKey:marker.text];
+                break;
+            }
+        }
+    }
+    // save dict
+    [FootworkSavedState setObject:locationLabels
+                           forKey:kDefaultLocationLabels];
+}
+
+
 #pragma mark - DraggingDelegate
 
 -(BOOL)currentPositionIsValidFor:(DraggableLabel *)label{
     // Try to find one target that the label fits within.
     for( UIView* target in _targets ){
-        if( viewDistance( label, target ) < 20 ){
+        if( [self isMarker:label inTarget:target] ){
             return YES;
+            // TODO: return NO if there is a different label in the target already
         }
     }
     // holdingArea is another valid target area
-    if( label.frame.origin.y > holdingArea.frame.origin.y ) {
+    if( [self isInHoldingArea:label] ) {
         return YES;
     }
     // label does not fit in any targets, so it's not in a valid position
     return NO;
+}
+
+
+-(void)placedLabelInNewPosition:(DraggableLabel *)label{
+    [self savePositions];
 }
 
 @end

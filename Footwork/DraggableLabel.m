@@ -72,6 +72,8 @@
     if( [self.delegate currentPositionIsValidFor:self] ){
         // accept new position
         newPosition = touchPos;
+        // notify delegate
+        [self.delegate placedLabelInNewPosition:self];
     }else{
         // reject new position
         newPosition = _originalPosition;

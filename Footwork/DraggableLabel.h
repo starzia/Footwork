@@ -18,6 +18,8 @@
     (otherwise the label will be snapped back to its prior position). */
 -(BOOL)currentPositionIsValidFor:(DraggableLabel*)label;
 
+-(void)placedLabelInNewPosition:(DraggableLabel*)label;
+
 @end
 
 
