@@ -35,6 +35,15 @@
 @synthesize marker8;
 @synthesize marker9;
 
+
+// helper function, returning the distance between the centers of two UIView having the same superview
+CGFloat viewDistance( UIView* a, UIView* b ){
+    float x = (a.center.x - b.center.x);
+    float y = (a.center.y - b.center.y);
+    return sqrtf( x*x + y*y );
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,12 +64,18 @@
 #pragma mark - DraggingDelegate
 
 -(BOOL)currentPositionIsValidFor:(DraggableLabel *)label{
-    // TODO just position validity based on overlap with certain targets
-    if( label.center.x > 200 || label.center.x < 100 ){ // arbitrary criterion
-        return YES;
-    }else{
-        return NO;
+    // Try to find one target that the label fits within.
+    for( UIView* target in _targets ){
+        if( viewDistance( label, target ) < 20 ){
+            return YES;
+        }
     }
+    // holdingArea is another valid target area
+    if( label.frame.origin.y > holdingArea.frame.origin.y ) {
+        return YES;
+    }
+    // label does not fit in any targets, so it's not in a valid position
+    return NO;
 }
 
 @end
