@@ -70,7 +70,7 @@ CGFloat viewDistance( UIView* a, UIView* b ){
 }
 
 -(BOOL)isMarker:(DraggableLabel*)marker inTarget:(UIView*)target{
-    return viewDistance( marker, target ) < 20;
+    return viewDistance( marker, target ) < 25;
 }
 
 
@@ -121,8 +121,16 @@ CGFloat viewDistance( UIView* a, UIView* b ){
     // Try to find one target that the label fits within.
     for( UIView* target in _targets ){
         if( [self isMarker:label inTarget:target] ){
+            // we found that the marker is on top of a target
+            // but return NO if that target is already filled
+            for( DraggableLabel* otherMarker in _markers ){
+                if( otherMarker == label ) continue; // we're looking at the same marker
+                if( [self isMarker:otherMarker inTarget:target] ){
+                    return NO;
+                }
+            }
+            // if the target is empty then let the marker be placed there
             return YES;
-            // TODO: return NO if there is a different label in the target already
         }
     }
     // holdingArea is another valid target area
