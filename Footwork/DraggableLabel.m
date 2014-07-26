@@ -12,6 +12,8 @@
     CGPoint _originalPosition; // position at the time that dragging started
 }
 
+// when dragging, show label this many pixels above actual touch point so it is visible
+const CGFloat vOffset = 30.0;
 
 -(void)setup{
     // Initialization code
@@ -52,6 +54,7 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint position = [touches.anyObject locationInView:self.superview];
+    position.y -= vOffset; // show label about actual touch point for visibility
     
     // animate the view's movement so that it doesn't appear jumpy
     [UIView animateWithDuration:.001
@@ -69,6 +72,7 @@
     CGPoint newPosition;
     // ask delegate whether new position is valid
     CGPoint touchPos = [touches.anyObject locationInView:self.superview];
+    touchPos.y -= vOffset; // show label about actual touch point for visibility
     if( [self.delegate currentPositionIsValidFor:self] ){
         // accept new position
         newPosition = touchPos;
