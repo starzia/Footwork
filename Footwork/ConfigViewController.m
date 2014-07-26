@@ -70,7 +70,9 @@ CGFloat viewDistance( UIView* a, UIView* b ){
 }
 
 -(BOOL)isMarker:(DraggableLabel*)marker inTarget:(UIView*)target{
-    return viewDistance( marker, target ) < 25;
+    CGFloat threshold = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)?
+             50 : 25;
+    return viewDistance( marker, target ) < threshold;
 }
 
 
