@@ -29,6 +29,7 @@
 @synthesize emailCell, websiteCell;
 @synthesize recommendCell, reviewCell;
 @synthesize configNumbersCell;
+@synthesize resetCell;
 
 @synthesize marker0;
 @synthesize marker1;
@@ -41,13 +42,7 @@
 @synthesize marker8;
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    announcer = [[Announcer alloc] init];
-    announcer.configDelegate = self;
-    
+-(void)loadSettings{
     // load defaults
     { // - rateSlider
         NSNumber* savedRateSliderVal = [FootworkSavedState objectForKey:kDefaultRateSlider];
@@ -69,15 +64,9 @@
         modeControl.selectedSegmentIndex = savedModeControlVal.intValue;
         [self modeChanged:nil];
     }
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    // stop announcer when returning to this view
-    [announcer stop];
-    // arrange numbers on configNumbersCell
-    {
+    { // - arrange numbers on configNumbersCell
         NSArray* markers = [NSArray arrayWithObjects:marker0, marker1, marker2, marker3,
-                                        marker4, marker5, marker6, marker7, marker8, nil];
+                            marker4, marker5, marker6, marker7, marker8, nil];
         // hide all markers first
         for( UILabel* marker in markers ){
             marker.hidden = YES;
@@ -94,6 +83,22 @@
     }
 }
 
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    announcer = [[Announcer alloc] init];
+    announcer.configDelegate = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // stop announcer when returning to this view
+    [announcer stop];
+    // setup controls
+    [self loadSettings];
+}
+
 -(UINavigationItem*)navigationItem{
     if( !_navItem ){
         _navItem = [[UINavigationItem alloc] initWithTitle:@"Footwork Options"];
@@ -105,6 +110,13 @@
 {
     return YES;
 }
+
+
+-(void)reset{
+    [FootworkSavedState clearAllSettings];
+    [self loadSettings];
+}
+
 
 -(IBAction)modeChanged:(id)sender{
     // reload table to show/hide configNumbersCell
@@ -267,7 +279,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if( section == 3 ){
-        return 4;
+        return 5;
     }else{
         return 2;
     }
@@ -303,10 +315,12 @@
         }
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
-            return recommendCell;
+            return resetCell;
         }else if( indexPath.row == 1 ){
-            return reviewCell;
+            return recommendCell;
         }else if( indexPath.row == 2 ){
+            return reviewCell;
+        }else if( indexPath.row == 3 ){
             return websiteCell;
         }else{
             return emailCell;
@@ -364,13 +378,15 @@
     
     }else if( indexPath.section == 3 ){
         if( indexPath.row == 0 ){
+            [self reset];
+        }else if( indexPath.row == 1 ){
             // email friend
             [self emailFriend];
-        }else if( indexPath.row == 1 ){
+        }else if( indexPath.row == 2 ){
             // write an app review
             NSString* url = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=530904252"];
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
-        }else if( indexPath.row == 2 ){
+        }else if( indexPath.row == 3 ){
             // website
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
         }else{

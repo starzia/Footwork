@@ -34,6 +34,7 @@
 @property (strong) IBOutlet UITableViewCell* recommendCell;
 @property (strong) IBOutlet UITableViewCell* reviewCell;
 @property (strong) IBOutlet UITableViewCell* configNumbersCell;
+@property (strong) IBOutlet UITableViewCell* resetCell;
 
 @property (strong) IBOutlet UISegmentedControl* modeControl;
 

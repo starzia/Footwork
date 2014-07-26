@@ -15,4 +15,6 @@
 +(void) setObject:(NSObject*)obj forKey:(NSString*)key;
 +(void) removeObjectForKey:(NSString*)key;
 
++(void)clearAllSettings;
+
 @end

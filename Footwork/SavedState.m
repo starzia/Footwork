@@ -55,4 +55,10 @@ BOOL _isInitialized = NO;
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+
++(void)clearAllSettings{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
 @end

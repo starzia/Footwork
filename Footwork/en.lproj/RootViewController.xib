@@ -28,6 +28,7 @@
                 <outlet property="rateSlider" destination="8" id="37"/>
                 <outlet property="rateSliderLabel" destination="15" id="35"/>
                 <outlet property="recommendCell" destination="91" id="94"/>
+                <outlet property="resetCell" destination="ywr-TJ-rPI" id="NyW-iK-4WA"/>
                 <outlet property="reviewCell" destination="89" id="93"/>
                 <outlet property="startCell" destination="76" id="82"/>
                 <outlet property="view" destination="56" id="58"/>
@@ -341,6 +342,23 @@
                         <rect key="frame" x="129" y="32" width="158" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ywr-TJ-rPI">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ywr-TJ-rPI" id="Uzb-mT-G5w">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hyl-RH-8sL">
+                        <rect key="frame" x="20" y="11" width="280" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
