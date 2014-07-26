@@ -60,9 +60,8 @@
             marker.text = labelNumber.description;
             marker.hidden = NO;
         }
-        courtImage.hidden = !configDelegate.badmintonMode;
     }
-    
+    courtImage.hidden = !configDelegate.badmintonMode;
     numberLabel.hidden = configDelegate.badmintonMode;
 }
 
