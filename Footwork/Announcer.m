@@ -6,12 +6,13 @@
 //
 
 #import "Announcer.h"
-#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation Announcer{
     NSTimer* _mainTimer;
     NSTimer* _warningTimer;
     BOOL _isRunning;
+    AVAudioPlayer* audioPlayer;
 }
 
 @synthesize configDelegate, eventDelegate;
@@ -30,16 +31,16 @@
 }
 
 -(void)playSoundFile:(NSString*)filename{
-    SystemSoundID soundID;
+    // note that this stops any previously-running audio
     NSString *path = [[NSBundle mainBundle]
-                      pathForResource:filename ofType:@"wav"];    
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path],&soundID);
-    AudioServicesPlaySystemSound (soundID);
+                      pathForResource:filename ofType:@"wav"];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+                                                                   error:nil];
+    [audioPlayer play];
 }
 
 /** return random number from configDelegate.numbersToDrawFrom */
--(NSInteger)getRandom{
+-(int)getRandom{
     NSArray* numbers = configDelegate.labelNumbersToDrawFrom;
     int randIdx = ( arc4random() % numbers.count );
     return ((NSNumber*)numbers[randIdx]).intValue;
