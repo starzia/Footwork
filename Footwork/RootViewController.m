@@ -106,6 +106,10 @@
     return _navItem;
 }
 
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
 -(void)reset{
     [FootworkSavedState clearAllSettings];
     [self loadSettings];
