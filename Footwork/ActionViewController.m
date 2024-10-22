@@ -91,9 +91,9 @@
     // ramp up to a black mask, then go back to clear
     [UIView animateWithDuration:duration
                      animations:^(void){
-                         _flash.alpha = 1.0;
+                         self->_flash.alpha = 1.0;
                      } completion:^(BOOL finished){
-                         _flash.alpha = 0;
+                         self->_flash.alpha = 0;
                      }];
 }
 

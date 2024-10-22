@@ -12,7 +12,7 @@
 
 @interface RootViewController (){
     UINavigationItem* _navItem;
-    UIAlertView* _waitAlert;
+    UIAlertController* _waitAlert;
 }
 
 @end
@@ -106,12 +106,6 @@
     return _navItem;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
-
 -(void)reset{
     [FootworkSavedState clearAllSettings];
     [self loadSettings];
@@ -131,19 +125,19 @@
 // throw up UIAlert and wait for a few seconds before really starting
 -(void)preStart{
     // alert user that fingerprint is not yet ready
-	_waitAlert = [[UIAlertView alloc] initWithTitle:@"Training will begin in 3 seconds."
-                                            message:nil
-                                           delegate:nil
-                                  cancelButtonTitle:nil
-                                  otherButtonTitles:nil];
-	[_waitAlert show];
-	// add spinning activity indicator
-	UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]
-										  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-	indicator.center = CGPointMake(140, 90);
-	[indicator startAnimating];
-	[_waitAlert addSubview:indicator];
-    
+    _waitAlert = [UIAlertController alertControllerWithTitle:@"Please wait"
+                                                     message:@"Training will begin in 3 seconds.\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+    // add spinning activity indicator
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]
+                                          initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.center = CGPointMake(140, 90);
+    [indicator startAnimating];
+    [_waitAlert.view addSubview:indicator];
+
+    [self presentViewController:_waitAlert
+                       animated:TRUE
+                     completion:nil];
+
     // start timer
     [NSTimer scheduledTimerWithTimeInterval:3
                                      target:self
@@ -154,7 +148,7 @@
 
 -(void)start{
     // dismiss "wait" alert
-    [_waitAlert dismissWithClickedButtonIndex:0 animated:YES];
+    [_waitAlert dismissViewControllerAnimated:TRUE completion:nil];
     
     // create and setup new view controller
     ActionViewController* actionViewController = [[ActionViewController alloc] init];
@@ -222,12 +216,16 @@
 }
 
 -(void)emailFailed{
-    UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Email unavailable"
-                                                      message:@"Please configure your email settings before trying to use this option."
-                                                     delegate:self
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-    [myAlert show];
+    UIAlertController *myAlert =
+    [UIAlertController alertControllerWithTitle:@"Email unavailable"
+                                        message:@"Please configure your email settings before trying to use this option."
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                   handler:nil];
+    [myAlert addAction:defaultAction];
+    [self presentViewController:myAlert
+                       animated:TRUE
+                     completion:nil];
 }
 
 -(void)emailMe{
@@ -366,7 +364,9 @@
             [self preStart];
         }else{
             // instructions
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://youtu.be/1wEPz7s-n5w"]
+                                               options:@{}
+                                     completionHandler:nil];
         }
     }else if( indexPath.section == 2 ){
         if( indexPath.row == 1 ){
@@ -385,10 +385,14 @@
         }else if( indexPath.row == 2 ){
             // write an app review
             NSString* url = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=530904252"];
-            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]
+                                               options:@{}
+                                     completionHandler:nil];
         }else if( indexPath.row == 3 ){
             // website
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://stevetarzia.com/footwork"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://stevetarzia.com/footwork"]
+                                               options:@{}
+                                     completionHandler:nil];
         }else{
             // email me
             [self emailMe];
