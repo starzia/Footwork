@@ -500,6 +500,8 @@
 		AA47BEB11560964B00B76784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				DEVELOPMENT_TEAM = A67Z86RS4E;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
@@ -514,6 +516,8 @@
 		AA47BEB21560964B00B76784 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = A67Z86RS4E;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Footwork/Footwork-Prefix.pch";
 				INFOPLIST_FILE = "Footwork/Footwork-Info.plist";
